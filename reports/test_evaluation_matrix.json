@@ -1,0 +1,62 @@
+{
+    "Real Facial Image Localization": {
+        "status": "PASSED",
+        "details": "Detected 1 face subject(s).",
+        "timestamp": "2026-10-31 00:55:31"
+    },
+    "Manipulated Facial Image Localization": {
+        "status": "PASSED",
+        "details": "Detected 1 face subject(s).",
+        "timestamp": "2026-10-31 00:55:31"
+    },
+    "Zero-Face Image Rejection": {
+        "status": "PASSED",
+        "details": "Successfully returned NO_FACE_DETECTED status.",
+        "timestamp": "2026-10-31 00:55:31"
+    },
+    "Video Container Decoding": {
+        "status": "PASSED",
+        "details": "Valid container: 60 frames at 30.0 FPS.",
+        "timestamp": "2026-10-31 00:55:31"
+    },
+    "Video Temporal Aggregation": {
+        "status": "PASSED",
+        "details": "Status: INCONCLUSIVE, Analyzed: 8 frames.",
+        "timestamp": "2026-10-31 00:55:31"
+    },
+    "Zero-Face Video Inconclusive Handling": {
+        "status": "PASSED",
+        "details": "Cleanly returned INCONCLUSIVE verdict.",
+        "timestamp": "2026-10-31 00:55:31"
+    },
+    "Corrupted Image Byte Safety": {
+        "status": "PASSED",
+        "details": "Raised expected ValueError without unhandled crash.",
+        "timestamp": "2026-10-31 00:55:31"
+    },
+    "Corrupted Video Guardrail": {
+        "status": "PASSED",
+        "details": "Successfully caught invalid container.",
+        "timestamp": "2026-10-31 00:55:33"
+    },
+    "Unsupported Format Validation": {
+        "status": "PASSED",
+        "details": "Rejected unsupported extension: .exe",
+        "timestamp": "2026-10-31 00:55:33"
+    },
+    "Large File Upload Guardrail": {
+        "status": "PASSED",
+        "details": "Rejected 75MB (> 60MB limit).",
+        "timestamp": "2026-10-31 00:55:33"
+    },
+    "Missing Model Guidance": {
+        "status": "PASSED",
+        "details": "Gracefully prompted Phase 3 directions.",
+        "timestamp": "2026-10-31 00:55:33"
+    },
+    "Grad-CAM & PDF Report Generation": {
+        "status": "PASSED",
+        "details": "Successfully created PDF (628402 bytes).",
+        "timestamp": "2026-10-31 00:55:33"
+    }
+}

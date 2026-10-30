@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code specific (allow settings.json for team uniformity)
+.vscode/*
+!.vscode/settings.json
+
+# Dataset media (preserve directory structure via .gitkeep)
+dataset/train/real/*
+!dataset/train/real/.gitkeep
+dataset/train/fake/*
+!dataset/train/fake/.gitkeep
+dataset/validation/real/*
+!dataset/validation/real/.gitkeep
+dataset/validation/fake/*
+!dataset/validation/fake/.gitkeep
+dataset/test/real/*
+!dataset/test/real/.gitkeep
+dataset/test/fake/*
+!dataset/test/fake/.gitkeep
+
+# Temporary analysis files
+temp_uploads/
+temp_frames/
+*.log
+
+# Generated PDF reports (preserve directory structure via .gitkeep)
+reports/*.pdf
+!reports/.gitkeep
+
+# Saved heavy ML models (weights, checkpoints, keras/h5 binaries)
+saved_models/*.keras
+saved_models/*.h5
+saved_models/*.pb
+!saved_models/.gitkeep
+!saved_models/model_metrics.json
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*

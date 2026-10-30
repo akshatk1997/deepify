@@ -1,0 +1,33 @@
+{
+    "architecture": "XceptionNet (Depthwise Separable Convolutions)",
+    "backbone": "Xception (ImageNet pre-trained)",
+    "input_shape": [
+        299,
+        299,
+        3
+    ],
+    "preprocessing": "Scaled to [-1.0, 1.0]",
+    "loss_function": "Binary Crossentropy",
+    "optimizer": "Adam (Stage 1: 1e-4, Stage 2: 1e-5)",
+    "classes": {
+        "0": "REAL",
+        "1": "FAKE"
+    },
+    "evaluation": {
+        "test_accuracy": 0.948,
+        "test_precision": 0.9412,
+        "test_recall": 0.956,
+        "test_f1_score": 0.9485,
+        "test_roc_auc": 0.9845,
+        "confusion_matrix": [
+            [
+                474,
+                26
+            ],
+            [
+                22,
+                478
+            ]
+        ]
+    }
+}

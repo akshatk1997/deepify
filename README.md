@@ -1,6 +1,6 @@
-# DEEPGUARD AI – Deepfake Detection & Media Authenticity Verification System
+# DEEPIFY – Deepfake Detection & Media Authenticity Verification System
 
-[![GitHub Repo](https://img.shields.io/badge/GitHub-akshatk1997%2Fdeepguard--ai-181717.svg?style=flat&logo=github)](https://github.com/akshatk1997/deepguard-ai)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-akshatk1997%2Fdeepify-181717.svg?style=flat&logo=github)](https://github.com/akshatk1997/deepify)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Akshat%20Kumar-0A66C2.svg?style=flat&logo=linkedin)](https://www.linkedin.com/in/akshatk1997)
 [![Python Version](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15%2B-orange.svg)](https://tensorflow.org/)
@@ -10,13 +10,13 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 > **Portfolio & Capstone Resume Title:**  
-> *DEEPGUARD AI – Deep Learning-Based Image & Video Deepfake Detection and Media Authenticity Verification Using CNN, XceptionNet, OpenCV and Explainable AI.*
+> *DEEPIFY – Deep Learning-Based Image & Video Deepfake Detection and Media Authenticity Verification Using CNN, XceptionNet, OpenCV and Explainable AI.*
 
 ---
 
 ## 1. Project Overview
 
-**DEEPGUARD AI** is an enterprise-grade forensic analysis system designed to verify the authenticity of facial imagery and video streams. By leveraging **XceptionNet** (Extreme Inception) feature extractors with depthwise separable convolutions, coupled with **Haar/DNN Face Detection** and **Gradient-weighted Class Activation Mapping (Grad-CAM)**, DEEPGUARD AI provides transparent, explainable predictions classifying media as **REAL** (authentic) or **FAKE** (AI-synthesized / manipulated).
+**DEEPIFY** is an enterprise-grade forensic analysis system designed to verify the authenticity of facial imagery and video streams. By leveraging **XceptionNet** (Extreme Inception) feature extractors with depthwise separable convolutions, coupled with **Haar/DNN Face Detection** and **Gradient-weighted Class Activation Mapping (Grad-CAM)**, DEEPIFY provides transparent, explainable predictions classifying media as **REAL** (authentic) or **FAKE** (AI-synthesized / manipulated).
 
 ### Key Highlights
 - **Dual-Mode Analysis**: Real-time image forensics and frame-sampled temporal video verification.
@@ -73,7 +73,7 @@
 ## 3. Repository Structure
 
 ```
-deepguard-ai/
+deepify/
 ├── app.py                      # Primary Streamlit application entry point
 ├── requirements.txt            # Pinned, conflict-tested dependencies
 ├── README.md                   # Comprehensive documentation & setup guide
@@ -165,7 +165,7 @@ The browser will open automatically at `http://localhost:8501`.
 
 ## 6. Model Training Workflow
 
-Training heavy deep learning models on local consumer laptops without high-end dedicated GPUs is discouraged. DEEPGUARD AI provides an end-to-end **Google Colab Notebook** (`notebooks/deepfake_training.ipynb`) configured for free cloud T4/V100 GPUs.
+Training heavy deep learning models on local consumer laptops without high-end dedicated GPUs is discouraged. DEEPIFY provides an end-to-end **Google Colab Notebook** (`notebooks/deepfake_training.ipynb`) configured for free cloud T4/V100 GPUs.
 
 1. Upload `notebooks/deepfake_training.ipynb` to [Google Colab](https://colab.research.google.com/).
 2. Select **Runtime > Change runtime type > T4 GPU**.
@@ -177,7 +177,7 @@ Training heavy deep learning models on local consumer laptops without high-end d
 
 ## 7. Forensic Verification & Explainability
 
-DEEPGUARD AI ensures transparent predictions:
+DEEPIFY ensures transparent predictions:
 - **No Mock Results**: Inference executes through the XceptionNet computational graph.
 - **Grad-CAM Integration**: Class activation maps project gradients onto final convolutional feature maps (`block14_sepconv2_act`), showing where the network focused.
 - **Inconclusive Handling**: When no human face is detected in the uploaded media, the system safely halts and prompts the investigator rather than hallucinating classifications.
@@ -187,13 +187,11 @@ DEEPGUARD AI ensures transparent predictions:
 ## 8. Author & Developer Contact
 
 **Akshat Kumar**  
-*AI Developer & Product Builder*  
 Bridging B.Tech Computer Science and MBA in AI & Data Science to ship production-grade machine intelligence and computer vision systems.
 
 - 🌐 **GitHub Profile**: [@akshatk1997](https://github.com/akshatk1997)
 - 💼 **LinkedIn Profile**: [linkedin.com/in/akshatk1997](https://www.linkedin.com/in/akshatk1997)
-- ✉️ **Email**: [akshatk1997@gmail.com](mailto:akshatk1997@gmail.com)
-- 📂 **Project Repository**: [github.com/akshatk1997/deepguard-ai](https://github.com/akshatk1997/deepguard-ai)
+- 📂 **Project Repository**: [github.com/akshatk1997/deepify](https://github.com/akshatk1997/deepify)
 
 ---
 

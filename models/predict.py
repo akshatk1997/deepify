@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Forensic Model Inference Engine
+DEEPIFY - Forensic Model Inference Engine
 ===============================================
 Executes deepfake detection inference on localized face crops using the
 trained XceptionNet model (or the Calibrated Adaptive Forensic Engine if

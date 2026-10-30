@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Forensic Detection History Page
+DEEPIFY - Forensic Detection History Page
 ==============================================
 Provides persistent session tracking, tabular filtering, search,
 and export capabilities for all media analyses conducted in the active session.
@@ -41,7 +41,7 @@ def render_history_page():
     st.markdown(f"""
     <div class="saas-header-bar">
         <div style="font-weight: 700; color: #0f172a; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-            <span style="color: #2563eb;">🛡️ DEEPGUARD AI</span>
+            <span style="color: #2563eb;">🛡️ DEEPIFY</span>
             <span style="color: #cbd5e1;">|</span>
             <span style="color: #475569; font-weight: 500;">Forensic Audit Trail</span>
         </div>
@@ -129,10 +129,10 @@ def render_history_page():
     act_c1, act_c2, act_c3 = st.columns([2, 2, 2], gap="medium")
     with act_c1:
         csv_bytes = df_history.to_csv(index=False).encode("utf-8")
-        st.download_button("📥 Export Audit Trail (CSV)", data=csv_bytes, file_name="deepguard_audit_trail.csv", mime="text/csv", use_container_width=True)
+        st.download_button("📥 Export Audit Trail (CSV)", data=csv_bytes, file_name="deepify_audit_trail.csv", mime="text/csv", use_container_width=True)
     with act_c2:
         json_bytes = json.dumps(filtered, indent=4).encode("utf-8")
-        st.download_button("📥 Export Audit Trail (JSON)", data=json_bytes, file_name="deepguard_audit_trail.json", mime="application/json", use_container_width=True)
+        st.download_button("📥 Export Audit Trail (JSON)", data=json_bytes, file_name="deepify_audit_trail.json", mime="application/json", use_container_width=True)
     with act_c3:
         if st.button("🗑️ Reset Session Audit Trail", use_container_width=True):
             st.session_state.analysis_history = []

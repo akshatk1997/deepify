@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Forensic Metrics & Dataset Analytics Engine
+DEEPIFY - Forensic Metrics & Dataset Analytics Engine
 ===========================================================
 Calculates dataset distributions, class balances, classification metrics,
 and generates forensic visualization figures.
@@ -112,7 +112,7 @@ def plot_dataset_distribution(stats: Dict[str, Any], output_path: Optional[str] 
     rects2 = ax.bar(x + width/2, fake_counts, width, label="FAKE (Manipulated)", color="#ef4444", edgecolor="#f87171")
 
     ax.set_ylabel("Face Image Count", color="#94a3b8", fontsize=11)
-    ax.set_title("DEEPGUARD AI – Dataset Partition & Class Distribution", color="#00d2ff", fontsize=13, fontweight="bold")
+    ax.set_title("DEEPIFY – Dataset Partition & Class Distribution", color="#00d2ff", fontsize=13, fontweight="bold")
     ax.set_xticks(x)
     ax.set_xticklabels(splits, color="#f1f5f9", fontsize=11)
     ax.tick_params(axis="y", colors="#94a3b8")
@@ -187,7 +187,7 @@ def plot_confusion_matrix(cm: np.ndarray, output_path: Optional[str] = None) -> 
 
     ax.set_xlabel("Predicted Class", color="#94a3b8", fontsize=11)
     ax.set_ylabel("True Class", color="#94a3b8", fontsize=11)
-    ax.set_title("DEEPGUARD AI – Confusion Matrix", color="#00d2ff", fontsize=12, fontweight="bold")
+    ax.set_title("DEEPIFY – Confusion Matrix", color="#00d2ff", fontsize=12, fontweight="bold")
     ax.tick_params(colors="#f1f5f9")
 
     plt.tight_layout()

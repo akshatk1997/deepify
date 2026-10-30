@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Automated Model Weights Downloader
+DEEPIFY - Automated Model Weights Downloader
 =================================================
 Automates secure downloading of the pre-trained XceptionNet deepfake model
 (xception_deepfake.keras) for cloud deployments (Streamlit Community Cloud,
@@ -19,8 +19,8 @@ MODEL_PATH = SAVED_MODELS_DIR / "xception_deepfake.keras"
 # Default Model Hosting URL (e.g. GitHub Releases, HuggingFace, or S3 bucket)
 # Replace with your actual direct model release URL
 DEFAULT_MODEL_URL = os.environ.get(
-    "DEEPGUARD_MODEL_URL",
-    "https://github.com/your-username/deepguard-ai/releases/download/v1.0.0/xception_deepfake.keras"
+    "DEEPIFY_MODEL_URL",
+    os.environ.get("DEEPGUARD_MODEL_URL", "https://github.com/akshatk1997/deepify/releases/download/v1.0.0/xception_deepfake.keras")
 )
 
 

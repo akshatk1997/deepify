@@ -1,5 +1,5 @@
 {
-    "architecture": "DeepGuard Forensic Depthwise CNN (Extreme Inception)",
+    "architecture": "Deepify Forensic Depthwise CNN (Extreme Inception)",
     "input_shape": [
         299,
         299,

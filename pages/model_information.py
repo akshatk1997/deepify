@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Model Architecture & Performance Page
+DEEPIFY - Model Architecture & Performance Page
 =====================================================
 Detailed technical documentation on the XceptionNet deepfake detection network,
 depthwise separable convolutions, benchmark metrics, training trajectory,
@@ -26,7 +26,7 @@ def render_model_information_page():
     st.markdown("""
     <div class="saas-header-bar">
         <div style="font-weight: 700; color: #0f172a; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-            <span style="color: #2563eb;">🛡️ DEEPGUARD AI</span>
+            <span style="color: #2563eb;">🛡️ DEEPIFY</span>
             <span style="color: #cbd5e1;">|</span>
             <span style="color: #475569; font-weight: 500;">Neural Architecture & Benchmarks</span>
         </div>
@@ -185,7 +185,7 @@ def render_model_information_page():
             <ul style="color: #334155; font-size: 0.9rem; line-height: 1.8; margin-bottom: 0;">
                 <li><strong>Severe Platform Compression:</strong> Heavy H.264/H.265 compression (e.g. WhatsApp or Twitter) can destroy high-frequency manipulation boundaries.</li>
                 <li><strong>Extreme Profile Angles:</strong> Subjects turned >60° away from the camera optical axis reduce face localization reliability.</li>
-                <li><strong>Inconclusive Standard:</strong> DEEPGUARD AI outputs INCONCLUSIVE rather than guessing whenever human facial features are un-detected.</li>
+                <li><strong>Inconclusive Standard:</strong> DEEPIFY outputs INCONCLUSIVE rather than guessing whenever human facial features are un-detected.</li>
             </ul>
         </div>
         """, unsafe_allow_html=True)

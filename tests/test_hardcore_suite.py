@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Hardcore Multi-Perspective Forensic Evaluation Suite
+DEEPIFY - Hardcore Multi-Perspective Forensic Evaluation Suite
 ===================================================================
 Rigorous forensic validation of both image and video deepfake models
 across 8 distinct operational perspectives:
@@ -40,12 +40,12 @@ from models.temporal_video_model import TemporalVideoClassifier
 
 
 class TestHardcoreForensicSuite(unittest.TestCase):
-    """Rigorous multi-perspective test harness for DeepGuard AI."""
+    """Rigorous multi-perspective test harness for Deepify."""
 
     @classmethod
     def setUpClass(cls):
         print("\n" + "=" * 80)
-        print("DEEPGUARD AI - HARDCORE MULTI-PERSPECTIVE FORENSIC TEST SUITE")
+        print("DEEPIFY - HARDCORE MULTI-PERSPECTIVE FORENSIC TEST SUITE")
         print("=" * 80)
         cls.predictor = DeepfakePredictor()
         cls.detector = FaceDetector(margin_ratio=0.20)

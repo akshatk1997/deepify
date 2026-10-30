@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Comprehensive Forensic Test Suite & Matrix Evaluation
+DEEPIFY - Comprehensive Forensic Test Suite & Matrix Evaluation
 =====================================================================
 Executes automated test cases across all critical system components:
 1. Real facial image verification
@@ -200,7 +200,7 @@ class TestDeepGuardSuite(unittest.TestCase):
         with open(out_matrix, "w", encoding="utf-8") as f:
             json.dump(cls.test_results, f, indent=4)
         print("\n" + "=" * 75)
-        print("DEEPGUARD AI - AUTOMATED TEST SUITE SUMMARY MATRIX")
+        print("DEEPIFY - AUTOMATED TEST SUITE SUMMARY MATRIX")
         print("=" * 75)
         for k, v in cls.test_results.items():
             print(f"  [{v['status']}] {k}: {v['details']}")

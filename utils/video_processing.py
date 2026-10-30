@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Forensic Video Processing & Temporal Aggregation Engine
+DEEPIFY - Forensic Video Processing & Temporal Aggregation Engine
 =======================================================================
 Processes video files (MP4, AVI, MOV):
 1. Decodes video streams with OpenCV.

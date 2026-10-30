@@ -1,5 +1,5 @@
 /* ==============================================================================
-   DEEPGUARD AI - PREMIUM SAAS LIGHT THEME STYLESHEET
+   DEEPIFY - PREMIUM SAAS LIGHT THEME STYLESHEET
    Luxury Enterprise Computer Vision Platform (Stripe / Apple / Linear aesthetic)
    ============================================================================== */
 
@@ -178,7 +178,7 @@ header[data-testid="stHeader"] {
 }
 
 /* Premium White Frosted Glass Cards */
-.deepguard-card {
+.deepguard-card, .deepify-card {
     background: #ffffff;
     border: 1px solid var(--border-light);
     border-radius: 16px;
@@ -190,7 +190,7 @@ header[data-testid="stHeader"] {
     overflow: hidden;
 }
 
-.deepguard-card::before {
+.deepguard-card::before, .deepify-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -200,7 +200,7 @@ header[data-testid="stHeader"] {
     background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.35), transparent);
 }
 
-.deepguard-card:hover {
+.deepguard-card:hover, .deepify-card:hover {
     border-color: var(--border-hover);
     box-shadow: 0 10px 28px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
     transform: translateY(-2px);

@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Video Deepfake Forensics Page
+DEEPIFY - Video Deepfake Forensics Page
 ============================================
 Enterprise SaaS temporal video verification interface for multi-frame analysis,
 uniform sampling, temporal probability aggregation, suspicious frame galleries,
@@ -33,7 +33,7 @@ def render_video_detection_page():
     st.markdown("""
     <div class="saas-header-bar">
         <div style="font-weight: 700; color: #0f172a; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-            <span style="color: #2563eb;">🛡️ DEEPGUARD AI</span>
+            <span style="color: #2563eb;">🛡️ DEEPIFY</span>
             <span style="color: #cbd5e1;">|</span>
             <span style="color: #475569; font-weight: 500;">Temporal Video Forensics</span>
         </div>
@@ -326,7 +326,7 @@ def render_video_detection_page():
         st.download_button(
             label="📄 Download Official Video Forensic Audit Report (PDF)",
             data=pdf_bytes,
-            file_name=f"DeepGuard_Video_Report_{record_id}.pdf",
+            file_name=f"Deepify_Video_Report_{record_id}.pdf",
             mime="application/pdf",
             use_container_width=True
         )

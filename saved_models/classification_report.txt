@@ -1,6 +1,6 @@
-DEEPGUARD AI - MODEL PERFORMANCE REPORT
+DEEPIFY - MODEL PERFORMANCE REPORT
 ==================================================
-Architecture: DeepGuard Forensic Depthwise CNN
+Architecture: Deepify Forensic Depthwise CNN
 Accuracy:     96.67%
 Precision:    93.75%
 Recall:       100.00%

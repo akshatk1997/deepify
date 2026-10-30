@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - About Project & Technical Disclosures
+DEEPIFY - About Project & Technical Disclosures
 ====================================================
 Comprehensive documentation covering problem formulation, engineering objectives,
 architectural stack, academic references, future development roadmap,
@@ -24,7 +24,7 @@ def render_about_page():
     st.markdown("""
     <div class="saas-header-bar">
         <div style="font-weight: 700; color: #0f172a; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-            <span style="color: #2563eb;">🛡️ DEEPGUARD AI</span>
+            <span style="color: #2563eb;">🛡️ DEEPIFY</span>
             <span style="color: #cbd5e1;">|</span>
             <span style="color: #475569; font-weight: 500;">About Platform & Specifications</span>
         </div>
@@ -41,7 +41,7 @@ def render_about_page():
         if LOGO_PATH.exists():
             st.image(str(LOGO_PATH), width=90)
     with col_title:
-        st.markdown('<div class="brand-title">ABOUT DEEPGUARD AI</div>', unsafe_allow_html=True)
+        st.markdown('<div class="brand-title">ABOUT DEEPIFY</div>', unsafe_allow_html=True)
         st.markdown(
             '<div class="brand-subtitle">'
             'Next-generation computer vision intelligence platform for automated facial deepfake detection, '
@@ -126,7 +126,7 @@ def render_about_page():
     # Enterprise Feature Matrix
     st.subheader("⚖️ Enterprise Capability Comparison Matrix")
     st.markdown("""
-    | Operational Feature | Traditional Rule-Based | Generic MobileNet | DEEPGUARD AI (Xception + Grad-CAM) |
+    | Operational Feature | Traditional Rule-Based | Generic MobileNet | DEEPIFY (Xception + Grad-CAM) |
     | :--- | :---: | :---: | :---: |
     | **Depthwise Cross-Channel Separation** | ❌ No | Partial | ✅ **Full 36-Stage Decoupled Topology** |
     | **Boundary Margin Expansion (20%)** | ❌ Tightly cropped | ❌ Cut off | ✅ **Preserves Blending Seams** |
@@ -143,7 +143,7 @@ def render_about_page():
     st.markdown("""
     <div class="cyber-alert-info">
         <strong style="color: #1e3a8a;">FINAL PROJECT TITLE FOR PORTFOLIO & RESUME:</strong><br>
-        <em style="color: #0f172a; font-weight: 600;">DEEPGUARD AI – Deep Learning-Based Image & Video Deepfake Detection and Media Authenticity Verification Using CNN, XceptionNet, OpenCV and Explainable AI.</em><br>
+        <em style="color: #0f172a; font-weight: 600;">DEEPIFY – Deep Learning-Based Image & Video Deepfake Detection and Media Authenticity Verification Using CNN, XceptionNet, OpenCV and Explainable AI.</em><br>
         <small style="color: #475569;">
             Engineered as an enterprise-grade applied machine learning and forensic computer vision platform suitable for capstone evaluations, technical interviews, and GitHub portfolio presentation.
         </small>
@@ -157,10 +157,10 @@ def render_about_page():
     <div class="deepguard-card" style="border-left: 4px solid #2563eb; background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
             <div style="flex: 1; min-width: 280px;">
-                <div style="font-size: 0.8rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Lead Architect & Maintainer</div>
+                <div style="font-size: 0.8rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Developer & Maintainer</div>
                 <h3 style="color: #0f172a; margin: 0 0 6px 0; font-size: 1.4rem;">Akshat Kumar</h3>
                 <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
-                    AI Developer & Product Builder. Bridging B.Tech Computer Science and MBA AI & Data Science to ship scalable machine intelligence platforms, computer vision pipelines, and production SaaS architectures.
+                    Bridging B.Tech Computer Science and MBA AI & Data Science to ship scalable machine intelligence platforms, computer vision pipelines, and production SaaS architectures.
                 </p>
                 <div style="display: flex; flex-wrap: wrap; gap: 12px;">
                     <a href="https://github.com/akshatk1997" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #ffffff; background: #0f172a; padding: 10px 18px; border-radius: 8px; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
@@ -170,9 +170,6 @@ def render_about_page():
                     <a href="https://www.linkedin.com/in/akshatk1997" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #ffffff; background: #0a66c2; padding: 10px 18px; border-radius: 8px; font-weight: 600; box-shadow: 0 2px 4px rgba(10,102,194,0.2);">
                         <svg height="18" width="18" viewBox="0 0 24 24" fill="#ffffff"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         Connect on LinkedIn
-                    </a>
-                    <a href="mailto:akshatk1997@gmail.com" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #0f172a; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px 18px; border-radius: 8px; font-weight: 600;">
-                        ✉️ Email: akshatk1997@gmail.com
                     </a>
                 </div>
             </div>

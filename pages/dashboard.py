@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Forensic Platform Dashboard Page
+DEEPIFY - Forensic Platform Dashboard Page
 ================================================
 Central telemetry and operational command center displaying live analysis counts,
 biometric verdict distributions, recent forensic inspections, and model performance.
@@ -43,7 +43,7 @@ def render_dashboard_page():
     st.markdown("""
     <div class="saas-header-bar">
         <div style="font-weight: 700; color: #0f172a; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-            <span style="color: #2563eb;">🛡️ DEEPGUARD AI</span>
+            <span style="color: #2563eb;">🛡️ DEEPIFY</span>
             <span style="color: #cbd5e1;">|</span>
             <span style="color: #475569; font-weight: 500;">Forensic Operations Center</span>
         </div>
@@ -61,7 +61,7 @@ def render_dashboard_page():
         if LOGO_PATH.exists():
             st.image(str(LOGO_PATH), width=90)
     with col_title:
-        st.markdown('<div class="brand-title">DEEPGUARD AI ENTERPRISE FORENSICS</div>', unsafe_allow_html=True)
+        st.markdown('<div class="brand-title">DEEPIFY ENTERPRISE FORENSICS</div>', unsafe_allow_html=True)
         st.markdown(
             '<div class="brand-subtitle">'
             'Next-generation computer vision intelligence platform for automated facial deepfake detection, '

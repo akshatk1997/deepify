@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Image Preprocessing & Augmentation Engine
+DEEPIFY - Image Preprocessing & Augmentation Engine
 ========================================================
 Standardized image scaling (299x299), normalization ([-1, 1] for Xception),
 and forensic data augmentation utilities.

@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Temporal Video Deepfake Classification Model
+DEEPIFY - Temporal Video Deepfake Classification Model
 ============================================================
 Learns temporal sequence dynamics of video deepfakes:
 1. Inter-frame probability velocity & jitter
@@ -233,7 +233,7 @@ def train_temporal_video_model(output_path: Optional[Path] = None) -> TemporalVi
     Generates realistic video sequence training tracks and fits the temporal model.
     """
     print("=" * 75)
-    print("DEEPGUARD AI - TEMPORAL VIDEO MODEL TRAINING")
+    print("DEEPIFY - TEMPORAL VIDEO MODEL TRAINING")
     print("=" * 75)
 
     np.random.seed(42)

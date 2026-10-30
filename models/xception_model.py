@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Forensic Neural Architecture Definition
+DEEPIFY - Forensic Neural Architecture Definition
 ======================================================
 Constructs the deepfake detection neural network using Depthwise Separable
 Convolutions (Extreme Inception topology) to decouple spatial feature extraction

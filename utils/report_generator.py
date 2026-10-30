@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Forensic PDF Report Generation Engine
+DEEPIFY - Forensic PDF Report Generation Engine
 =====================================================
 Generates court-admissible, audit-ready cryptographic PDF verification reports
 using ReportLab. Includes branding, unique investigation ID, SHA-256 audit hashes,
@@ -41,7 +41,7 @@ REPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
 class ForensicReportGenerator:
     """
-    Automated ReportLab forensic report generator for DEEPGUARD AI.
+    Automated ReportLab forensic report generator for DEEPIFY.
     """
 
     def __init__(self, output_dir: Optional[Path] = None):
@@ -122,7 +122,7 @@ class ForensicReportGenerator:
         Builds a comprehensive single-image forensic authenticity verification PDF.
         """
         investigation_id = f"DG-IMG-{int(time.time())}"
-        pdf_filename = output_filename or f"DeepGuard_Forensic_Report_{investigation_id}.pdf"
+        pdf_filename = output_filename or f"Deepify_Forensic_Report_{investigation_id}.pdf"
         pdf_path = self.output_dir / pdf_filename
 
         doc = SimpleDocTemplate(
@@ -142,14 +142,14 @@ class ForensicReportGenerator:
         if LOGO_PATH.exists():
             logo_img = RLImage(str(LOGO_PATH), width=1.1 * inch, height=1.1 * inch)
             header_text = [
-                Paragraph("DEEPGUARD AI FORENSIC LABORATORY", self.title_style),
+                Paragraph("DEEPIFY FORENSIC LABORATORY", self.title_style),
                 Paragraph("Digital Media Authenticity Verification & Biometric Manipulation Audit", self.subtitle_style),
                 Paragraph(f"<b>Investigation ID:</b> {investigation_id} &nbsp;|&nbsp; <b>Date/Time:</b> {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}", self.body_style)
             ]
             header_table = Table([[logo_img, header_text]], colWidths=[1.3 * inch, 6.2 * inch])
         else:
             header_table = Table([[
-                Paragraph("DEEPGUARD AI FORENSIC LABORATORY", self.title_style),
+                Paragraph("DEEPIFY FORENSIC LABORATORY", self.title_style),
                 Paragraph(f"Investigation ID: {investigation_id}", self.body_style)
             ]], colWidths=[7.5 * inch])
 
@@ -283,7 +283,7 @@ class ForensicReportGenerator:
         elements.append(Paragraph(f"<b>SHA-256 Audit Signature:</b> <code>{audit_sha256}</code>", self.body_style))
         elements.append(Spacer(1, 4))
         elements.append(Paragraph(
-            "<b>LEGAL & FORENSIC CHAIN-OF-CUSTODY NOTICE:</b> This authenticity verification report was compiled by DEEPGUARD AI "
+            "<b>LEGAL & FORENSIC CHAIN-OF-CUSTODY NOTICE:</b> This authenticity verification report was compiled by DEEPIFY "
             "using deep neural network inference (XceptionNet) and Explainable AI backpropagation (Grad-CAM). Predictions reflect "
             "empirical statistical probabilities and localized boundary anomalies. While offering high empirical precision (94.8% on "
             "standard benchmarks), findings should be evaluated in conjunction with digital chain-of-custody metadata, sensor PRNU "
@@ -313,7 +313,7 @@ class ForensicReportGenerator:
         Builds a comprehensive multi-frame temporal video verification report.
         """
         investigation_id = f"DG-VID-{int(time.time())}"
-        pdf_filename = output_filename or f"DeepGuard_Video_Report_{investigation_id}.pdf"
+        pdf_filename = output_filename or f"Deepify_Video_Report_{investigation_id}.pdf"
         pdf_path = self.output_dir / pdf_filename
 
         doc = SimpleDocTemplate(
@@ -330,7 +330,7 @@ class ForensicReportGenerator:
 
         # 1. Header
         header_text = [
-            Paragraph("DEEPGUARD AI FORENSIC LABORATORY", self.title_style),
+            Paragraph("DEEPIFY FORENSIC LABORATORY", self.title_style),
             Paragraph("Temporal Video Stream Deepfake & Manipulation Verification Audit", self.subtitle_style),
             Paragraph(f"<b>Investigation ID:</b> {investigation_id} &nbsp;|&nbsp; <b>Date/Time:</b> {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}", self.body_style)
         ]
@@ -338,7 +338,7 @@ class ForensicReportGenerator:
             logo_img = RLImage(str(LOGO_PATH), width=1.1 * inch, height=1.1 * inch)
             header_table = Table([[logo_img, header_text]], colWidths=[1.3 * inch, 6.2 * inch])
         else:
-            header_table = Table([[Paragraph("DEEPGUARD AI", self.title_style), header_text]], colWidths=[1.5 * inch, 6.0 * inch])
+            header_table = Table([[Paragraph("DEEPIFY", self.title_style), header_text]], colWidths=[1.5 * inch, 6.0 * inch])
 
         header_table.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "MIDDLE")]))
         elements.append(header_table)

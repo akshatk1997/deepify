@@ -1,5 +1,5 @@
 # ==============================================================================
-# DEEPGUARD AI - Enterprise Container Dockerfile
+# DEEPIFY - Enterprise Container Dockerfile
 # Base: Python 3.11 Slim (Debian Bookworm) with OpenCV & TensorFlow support
 # ==============================================================================
 

@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Explainable AI (Grad-CAM) Engine
+DEEPIFY - Explainable AI (Grad-CAM) Engine
 ================================================
 Implements Gradient-weighted Class Activation Mapping (Grad-CAM)
 to expose and visualize the spatial convolutional features in facial imagery

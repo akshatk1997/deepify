@@ -76,9 +76,9 @@
         "title": "Video Sampling Density & Frame-Drop Resilience",
         "metrics": {
             "dense_sample_count": 16,
-            "dense_processing_time": "1.34s",
+            "dense_processing_time": "1.23s",
             "sparse_sample_count": 8,
-            "sparse_processing_time": "0.62s",
+            "sparse_processing_time": "0.63s",
             "verdict_consistent": true
         },
         "passed": true
@@ -86,9 +86,9 @@
     "Perspective 8": {
         "title": "Enterprise SLA Latency & Memory Determinism",
         "metrics": {
-            "mean_latency_ms": 75.45,
-            "p95_latency_ms": 79.76,
-            "throughput_fps": 13.3,
+            "mean_latency_ms": 78.34,
+            "p95_latency_ms": 86.03,
+            "throughput_fps": 12.8,
             "sla_target": "< 100ms per frame"
         },
         "passed": true

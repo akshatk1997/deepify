@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Single-Image Deepfake Forensics Page
+DEEPIFY - Single-Image Deepfake Forensics Page
 ====================================================
 Enterprise SaaS forensic interface for image upload, automated face localization,
 neural inference, Explainable AI (Grad-CAM), and court-ready PDF generation.
@@ -32,7 +32,7 @@ def render_image_detection_page():
     st.markdown("""
     <div class="saas-header-bar">
         <div style="font-weight: 700; color: #0f172a; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-            <span style="color: #2563eb;">🛡️ DEEPGUARD AI</span>
+            <span style="color: #2563eb;">🛡️ DEEPIFY</span>
             <span style="color: #cbd5e1;">|</span>
             <span style="color: #475569; font-weight: 500;">Image Forensic Lab</span>
         </div>
@@ -168,7 +168,7 @@ def render_image_detection_page():
                 {analysis['message']}
             </p>
             <p style="color: #64748b; font-size: 0.88rem; margin-bottom: 0;">
-                DEEPGUARD AI enforces strict forensic standards: non-facial imagery is cleanly marked 
+                DEEPIFY enforces strict forensic standards: non-facial imagery is cleanly marked 
                 <strong>INCONCLUSIVE</strong> to avoid hallucinated false classifications.
             </p>
         </div>
@@ -313,7 +313,7 @@ def render_image_detection_page():
         st.download_button(
             label="📄 Download Official Forensic Audit Report (PDF)",
             data=pdf_bytes,
-            file_name=f"DeepGuard_Forensic_Report_{record_id}.pdf",
+            file_name=f"Deepify_Forensic_Report_{record_id}.pdf",
             mime="application/pdf",
             use_container_width=True
         )

@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Face Detection & Alignment Engine
+DEEPIFY - Face Detection & Alignment Engine
 =================================================
 Forensic face extraction module using OpenCV with margin expansion
 to preserve facial boundaries, jawline blending seams, and manipulation artifacts.

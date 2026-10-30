@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Dataset Ingestion & Preprocessing Pipeline
+DEEPIFY - Dataset Ingestion & Preprocessing Pipeline
 =========================================================
 Processes raw videos from FaceForensics++, Celeb-DF, DFDC, or WildDeepfake:
 1. Performs video-level and identity-level partitioning (prevents data leakage).
@@ -122,7 +122,7 @@ def run_pipeline(
     detector = FaceDetector(margin_ratio=0.20)
 
     print("=" * 70)
-    print("DEEPGUARD AI - FORENSIC DATASET PREPROCESSING PIPELINE")
+    print("DEEPIFY - FORENSIC DATASET PREPROCESSING PIPELINE")
     print("=" * 70)
 
     for category in ["real", "fake"]:
@@ -161,7 +161,7 @@ def run_pipeline(
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="DeepGuard AI Video Preprocessing & Face Extraction")
+    parser = argparse.ArgumentParser(description="Deepify Video Preprocessing & Face Extraction")
     parser.add_argument("--raw_dir", type=str, default="raw_videos", help="Path to raw videos (contains real/ and fake/)")
     parser.add_argument("--output_dir", type=str, default="dataset", help="Destination dataset folder")
     parser.add_argument("--stride", type=int, default=15, help="Frame sampling stride (e.g. every 15th frame)")

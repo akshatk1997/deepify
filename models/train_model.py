@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Model Training & Evaluation Engine
+DEEPIFY - Model Training & Evaluation Engine
 ==================================================
 End-to-end training pipeline for XceptionNet / Depthwise Separable deepfake detection.
 Executes dual-stage transfer learning + fine-tuning, generates evaluation
@@ -183,7 +183,7 @@ def train_deepguard_model(
     Executes the dual-stage training protocol.
     """
     print("=" * 75)
-    print("DEEPGUARD AI - FORENSIC NEURAL MODEL TRAINING PIPELINE")
+    print("DEEPIFY - FORENSIC NEURAL MODEL TRAINING PIPELINE")
     print("=" * 75)
 
     # 1. Inspect dataset distribution and class weights
@@ -293,7 +293,7 @@ def train_deepguard_model(
 
     metrics_json = SAVED_MODELS_DIR / "model_metrics.json"
     metrics_data = {
-        "architecture": "DeepGuard Forensic Depthwise CNN (Extreme Inception)",
+        "architecture": "Deepify Forensic Depthwise CNN (Extreme Inception)",
         "input_shape": [299, 299, 3],
         "preprocessing": "[-1.0, 1.0] scaling",
         "classes": {"0": "REAL", "1": "FAKE"},
@@ -305,9 +305,9 @@ def train_deepguard_model(
 
     report_txt = SAVED_MODELS_DIR / "classification_report.txt"
     with open(report_txt, "w", encoding="utf-8") as f:
-        f.write("DEEPGUARD AI - MODEL PERFORMANCE REPORT\n")
+        f.write("DEEPIFY - MODEL PERFORMANCE REPORT\n")
         f.write("=" * 50 + "\n")
-        f.write(f"Architecture: DeepGuard Forensic Depthwise CNN\n")
+        f.write(f"Architecture: Deepify Forensic Depthwise CNN\n")
         f.write(f"Accuracy:     {metrics_result['accuracy'] * 100:.2f}%\n")
         f.write(f"Precision:    {metrics_result['precision'] * 100:.2f}%\n")
         f.write(f"Recall:       {metrics_result['recall'] * 100:.2f}%\n")
@@ -318,15 +318,18 @@ def train_deepguard_model(
     return metrics_result
 
 
+train_deepify_model = train_deepguard_model
+
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="DeepGuard AI Model Training")
+    parser = argparse.ArgumentParser(description="Deepify Model Training")
     parser.add_argument("--data_dir", type=str, default="dataset", help="Path to preprocessed dataset")
     parser.add_argument("--epochs1", type=int, default=6, help="Stage 1 epochs")
     parser.add_argument("--epochs2", type=int, default=3, help="Stage 2 epochs")
     parser.add_argument("--batch_size", type=int, default=8, help="Batch size")
     args = parser.parse_args()
 
-    train_deepguard_model(
+    train_deepify_model(
         data_dir=Path(args.data_dir),
         epochs_stage1=args.epochs1,
         epochs_stage2=args.epochs2,

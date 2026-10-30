@@ -1,5 +1,5 @@
 """
-DEEPGUARD AI - Forensic Dataset Generator & Multi-Artifact Synthesizer
+DEEPIFY - Forensic Dataset Generator & Multi-Artifact Synthesizer
 =====================================================================
 Generates structured sample face images with simulated forensic signatures
 for pipeline training, hardcore testing, interface verification, and validation.
@@ -131,7 +131,7 @@ def build_sample_dataset(dataset_root: Path):
     }
 
     print("=" * 75)
-    print("DEEPGUARD AI - COMPREHENSIVE DATASET GENERATION")
+    print("DEEPIFY - COMPREHENSIVE DATASET GENERATION")
     print("=" * 75)
     print("Generating enriched balanced dataset for model training...")
 

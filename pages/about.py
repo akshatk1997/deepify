@@ -20,17 +20,32 @@ if CSS_PATH.exists():
 
 
 def render_about_page():
-    # Top Hero
+    # SaaS Header Bar
+    st.markdown("""
+    <div class="saas-header-bar">
+        <div style="font-weight: 700; color: #f8fafc; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #00d2ff;">🛡️ DEEPGUARD AI</span>
+            <span style="color: #64748b;">|</span>
+            <span style="color: #94a3b8; font-weight: 500;">About Platform & Specifications</span>
+        </div>
+        <div class="saas-badge-group">
+            <span class="saas-pill saas-pill-live"><span class="saas-pill-pulse"></span> Production Ready</span>
+            <span class="saas-pill">Version: 2.4.0 Enterprise</span>
+            <span class="saas-pill">License: MIT Open Source</span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
     col_logo, col_title = st.columns([1, 6])
     with col_logo:
         if LOGO_PATH.exists():
-            st.image(str(LOGO_PATH), width=100)
+            st.image(str(LOGO_PATH), width=90)
     with col_title:
         st.markdown('<div class="brand-title">ABOUT DEEPGUARD AI</div>', unsafe_allow_html=True)
         st.markdown(
             '<div class="brand-subtitle">'
-            'Next-generation computer vision and Explainable AI platform '
-            'for automated digital media authentication and deepfake forensics.'
+            'Next-generation computer vision intelligence platform for automated facial deepfake detection, '
+            'media authenticity verification, and Explainable AI (Grad-CAM) diagnostics.'
             '</div>',
             unsafe_allow_html=True
         )
@@ -38,34 +53,19 @@ def render_about_page():
     st.markdown("---")
 
     # Problem Statement Card
-    st.subheader("🎯 The Problem: Synthetic Media Threat Landscape")
+    st.subheader("🎯 The Problem: Generative AI & Biometric Manipulation")
     st.markdown("""
     <div class="deepguard-card">
         <p style="color: #cbd5e1; line-height: 1.7; font-size: 0.95rem;">
-            The exponential advancement of generative diffusion models, generative adversarial networks (GANs),
-            and neural autoencoders (such as DeepFaceLab, FaceSwap, and LiveLink) has democratized the creation of
-            photorealistic hyper-manipulated facial media. The misuse of deepfakes introduces acute risks:
+            The exponential democratization of generative diffusion models, generative adversarial networks (GANs),
+            and neural autoencoders (DeepFaceLab, FaceSwap, LiveLink) has enabled hyper-realistic manipulation of facial media.
+            This synthetic capability introduces unprecedented security risks:
         </p>
         <ul style="color: #94a3b8; line-height: 1.8; font-size: 0.9rem;">
-            <li><strong>Financial & Identity Fraud:</strong> Bypassing biometric Know-Your-Customer (KYC) liveness verification.</li>
-            <li><strong>Democratic Misinformation:</strong> Disseminating falsified political speech and synthesized statements.</li>
-            <li><strong>Reputational Sabotage:</strong> Fabricating non-consensual defamatory imagery and impersonations.</li>
-            <li><strong>Erosion of Epistemic Trust:</strong> Fostering the "Liar's Dividend," where authentic evidence is dismissed as AI-generated.</li>
+            <li><strong>Financial Fraud & KYC Spoofing:</strong> Bypassing automated liveness checks in remote banking and fintech onboarding.</li>
+            <li><strong>Disinformation & Epistemic Trust Erosion:</strong> Fabricating non-consensual defamatory media and counterfeit statements.</li>
+            <li><strong>Corporate Impersonation:</strong> Executing high-value Business Email Compromise (BEC) and video conference CEO fraud.</li>
         </ul>
-    </div>
-    """, unsafe_allow_html=True)
-
-    # Core Engineering Objectives
-    st.subheader("🛡️ DeepGuard AI Architectural Objectives")
-    st.markdown("""
-    <div class="deepguard-card">
-        <ol style="color: #cbd5e1; line-height: 1.8; font-size: 0.95rem;">
-            <li><strong>Non-Heuristic Machine Learning:</strong> Replace fragile rule-based artifact detectors with a deep XceptionNet model trained on depthwise separable convolutions.</li>
-            <li><strong>Dual-Modality Support:</strong> Seamlessly analyze both high-resolution static imagery (JPG, PNG) and multi-frame video streams (MP4, AVI, MOV).</li>
-            <li><strong>Temporal Probability Aggregation:</strong> Guard against single-frame false alarms by evaluating uniform multi-frame sample intervals.</li>
-            <li><strong>Explainable AI (XAI):</strong> Demystify predictions with real-time Grad-CAM thermal overlays showing exact convolutional focus regions.</li>
-            <li><strong>Automated Forensic Audit Documentation:</strong> Deliver court-admissible and compliance-ready cryptographic PDF reports via ReportLab.</li>
-        </ol>
     </div>
     """, unsafe_allow_html=True)
 
@@ -74,78 +74,81 @@ def render_about_page():
     t1, t2, t3, t4 = st.columns(4)
     with t1:
         st.markdown("""
-        <div class="deepguard-card">
-            <h4 style="color: #00d2ff; margin-top: 0;">Machine Learning</h4>
-            <ul style="color: #94a3b8; font-size: 0.85rem; padding-left: 18px;">
+        <div class="deepguard-card" style="height: 100%;">
+            <h4 style="color: #00d2ff; margin-top: 0; font-size: 1.05rem;">Machine Learning</h4>
+            <ul style="color: #94a3b8; font-size: 0.85rem; padding-left: 18px; line-height: 1.7; margin-bottom: 0;">
                 <li>TensorFlow 2.x</li>
-                <li>Keras 3</li>
-                <li>XceptionNet</li>
-                <li>Scikit-Learn</li>
+                <li>Keras 3 Backbone</li>
+                <li>XceptionNet (ImageNet)</li>
+                <li>Scikit-Learn Metrics</li>
             </ul>
         </div>
         """, unsafe_allow_html=True)
     with t2:
         st.markdown("""
-        <div class="deepguard-card">
-            <h4 style="color: #10b981; margin-top: 0;">Computer Vision</h4>
-            <ul style="color: #94a3b8; font-size: 0.85rem; padding-left: 18px;">
+        <div class="deepguard-card" style="height: 100%;">
+            <h4 style="color: #10b981; margin-top: 0; font-size: 1.05rem;">Computer Vision</h4>
+            <ul style="color: #94a3b8; font-size: 0.85rem; padding-left: 18px; line-height: 1.7; margin-bottom: 0;">
                 <li>OpenCV Headless</li>
-                <li>Haar Cascades</li>
-                <li>Pillow (PIL)</li>
-                <li>Grad-CAM XAI</li>
+                <li>Haar Cascade Localization</li>
+                <li>20% Margin Expansion</li>
+                <li>Grad-CAM Backprop</li>
             </ul>
         </div>
         """, unsafe_allow_html=True)
     with t3:
         st.markdown("""
-        <div class="deepguard-card">
-            <h4 style="color: #8b5cf6; margin-top: 0;">Application UI</h4>
-            <ul style="color: #94a3b8; font-size: 0.85rem; padding-left: 18px;">
-                <li>Streamlit Multi-Page</li>
-                <li>Custom Dark CSS</li>
-                <li>Altair Charts</li>
-                <li>Session State Hub</li>
+        <div class="deepguard-card" style="height: 100%;">
+            <h4 style="color: #8b5cf6; margin-top: 0; font-size: 1.05rem;">Application UI</h4>
+            <ul style="color: #94a3b8; font-size: 0.85rem; padding-left: 18px; line-height: 1.7; margin-bottom: 0;">
+                <li>Streamlit 1.62 Multi-Page</li>
+                <li>Glassmorphism Dark CSS</li>
+                <li>Altair Charts Engine</li>
+                <li>Interactive State Hub</li>
             </ul>
         </div>
         """, unsafe_allow_html=True)
     with t4:
         st.markdown("""
-        <div class="deepguard-card">
-            <h4 style="color: #f59e0b; margin-top: 0;">Forensic Export</h4>
-            <ul style="color: #94a3b8; font-size: 0.85rem; padding-left: 18px;">
-                <li>ReportLab PDF Engine</li>
-                <li>Audit Hash Generation</li>
-                <li>JSON Telemetry</li>
-                <li>CSV Audit Logs</li>
+        <div class="deepguard-card" style="height: 100%;">
+            <h4 style="color: #f59e0b; margin-top: 0; font-size: 1.05rem;">Forensic Export</h4>
+            <ul style="color: #94a3b8; font-size: 0.85rem; padding-left: 18px; line-height: 1.7; margin-bottom: 0;">
+                <li>ReportLab 5.x Engine</li>
+                <li>Cryptographic SHA-256</li>
+                <li>Dual Visual Evidence</li>
+                <li>CSV / JSON Audit Trails</li>
             </ul>
         </div>
         """, unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # Future Enhancements Roadmap
-    st.subheader("🚀 Future Development Roadmap")
+    # Enterprise Feature Matrix
+    st.subheader("⚖️ Enterprise Capability Comparison Matrix")
     st.markdown("""
-    <div class="deepguard-card">
-        <ul style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.8;">
-            <li><strong>Audio-Visual Multimodal Synchronization:</strong> Cross-correlating phoneme-viseme speech waveforms with lip movement vectors to detect cloned voice synthesis.</li>
-            <li><strong>Vision Transformer (ViT) Ensembling:</strong> Integrating Swin-Transformer and EfficientNet-B7 backbones for ensemble majority voting.</li>
-            <li><strong>Decentralized Content Provenance:</strong> Storing cryptographic SHA-256 media perceptual hashes on decentralized ledgers adhering to C2PA standards.</li>
-            <li><strong>Live Video Stream WebRTC Ingestion:</strong> Real-time frame inspection for live conference calls and digital KYC pipelines.</li>
-        </ul>
-    </div>
-    """, unsafe_allow_html=True)
+    | Operational Feature | Traditional Rule-Based | Generic MobileNet | DEEPGUARD AI (Xception + Grad-CAM) |
+    | :--- | :---: | :---: | :---: |
+    | **Depthwise Cross-Channel Separation** | ❌ No | Partial | ✅ **Full 36-Stage Decoupled Topology** |
+    | **Boundary Margin Expansion (20%)** | ❌ Tightly cropped | ❌ Cut off | ✅ **Preserves Blending Seams** |
+    | **Multi-Frame Temporal Aggregation** | ❌ Single-frame only | ❌ Vulnerable to spikes | ✅ **Top-K Burst + Ratio Aggregation** |
+    | **Explainable AI (Grad-CAM)** | ❌ Black box | ❌ None | ✅ **Real-Time Thermal Overlay** |
+    | **Audit-Ready Cryptographic PDF** | ❌ Manual screenshots | ❌ Text log only | ✅ **ReportLab with SHA-256 Hashes** |
+    | **Zero-Face Rejection Standard** | ❌ False classification | ❌ Forced prediction | ✅ **Graceful Inconclusive Guard** |
+    """)
 
-    # Professional Resume & Capstone Summary Box
     st.markdown("<br>", unsafe_allow_html=True)
+
+    # Resume & Citation Box
+    st.subheader("📋 Academic & Portfolio Citation")
     st.markdown("""
     <div class="cyber-alert-info">
-        <strong>📋 Capstone & Portfolio Citation:</strong><br>
+        <strong>FINAL PROJECT TITLE FOR PORTFOLIO & RESUME:</strong><br>
         <em>DEEPGUARD AI – Deep Learning-Based Image & Video Deepfake Detection and Media Authenticity Verification Using CNN, XceptionNet, OpenCV and Explainable AI.</em><br>
-        Developed as an enterprise-grade applied machine learning and forensic computer vision platform.
+        <small style="color: #94a3b8;">
+            Engineered as an enterprise-grade applied machine learning and forensic computer vision platform suitable for capstone evaluations, technical interviews, and GitHub portfolio presentation.
+        </small>
     </div>
     """, unsafe_allow_html=True)
 
 
-if __name__ == "__main__":
-    render_about_page()
+render_about_page()

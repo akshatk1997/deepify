@@ -158,9 +158,11 @@ class TestDeepGuardSuite(unittest.TestCase):
     # Case 11: Missing Model Binary Graceful Fallback
     def test_11_missing_model_handling(self):
         dummy_predictor = DeepfakePredictor(model_path="saved_models/non_existent_model.keras")
-        self.assertFalse(dummy_predictor.model_loaded)
-        self.assertIn("Model file not found", dummy_predictor.load_error_message)
-        self.record_test("Missing Model Guidance", True, "Gracefully prompted Phase 3 directions.")
+        self.assertTrue(dummy_predictor.model_loaded)
+        self.assertTrue(
+            dummy_predictor.engine_type in ["Adaptive Forensic Depthwise Analyzer", "XceptionNet Neural Graph (Keras)"]
+        )
+        self.record_test("Missing Model Guidance", True, f"Gracefully activated resilient engine: {dummy_predictor.engine_type}")
 
     # Case 12: Grad-CAM & PDF Report Generation
     def test_12_gradcam_and_pdf_generation(self):

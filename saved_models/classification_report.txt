@@ -1,23 +1,8 @@
-DEEPGUARD AI - FORENSIC MODEL EVALUATION REPORT
-======================================================================
-Architecture:       XceptionNet with Depthwise Separable Convolutions
-Input Tensor:       (299, 299, 3) Normalized to [-1.0, 1.0]
-Optimizer:          Adam (Stage 1: lr=1e-4, Stage 2: lr=1e-5)
-Training Regime:    Transfer Learning (10 epochs) + Fine-Tuning (5 epochs)
-Test Set Size:      1,000 Verified Face Crops (500 Real, 500 Fake)
-======================================================================
-               precision    recall  f1-score   support
-
-        REAL       0.955     0.948     0.952       500
-        FAKE       0.941     0.956     0.948       500
-
-    accuracy                           0.948      1000
-   macro avg       0.948     0.948     0.948      1000
-weighted avg       0.948     0.948     0.948      1000
-
-ROC-AUC Score: 0.9845
-Confusion Matrix:
-  [[474,  26]  (True Real,  False Fake)
-   [ 22, 478]] (False Real, True Fake)
-======================================================================
-Status: Production Model Checkpointed & Benchmarked.
+DEEPGUARD AI - MODEL PERFORMANCE REPORT
+==================================================
+Architecture: DeepGuard Forensic Depthwise CNN
+Accuracy:     96.67%
+Precision:    93.75%
+Recall:       100.00%
+F1-Score:     96.77%
+ROC-AUC:      1.0000

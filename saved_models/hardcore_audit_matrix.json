@@ -1,0 +1,96 @@
+{
+    "Perspective 1": {
+        "title": "Spatial Portrait Generalization",
+        "metrics": {
+            "real_samples_evaluated": 15,
+            "fake_samples_evaluated": 15,
+            "mean_real_fake_prob": 0.12,
+            "mean_fake_fake_prob": 0.947,
+            "real_accuracy": "93.3%",
+            "fake_accuracy": "100.0%",
+            "total_accuracy": "96.7%"
+        },
+        "passed": true
+    },
+    "Perspective 2": {
+        "title": "Adversarial Lossy JPEG Compression Robustness",
+        "metrics": {
+            "Q=95_mean_absolute_drift": 0.0074,
+            "Q=75_mean_absolute_drift": 0.0219,
+            "Q=50_mean_absolute_drift": 0.0482,
+            "Q=30_mean_absolute_drift": 0.0639
+        },
+        "passed": true
+    },
+    "Perspective 3": {
+        "title": "Sensor Grain & Gaussian Noise Stress",
+        "metrics": {
+            "sigma_5_label_stability": "100.0%",
+            "sigma_15_label_stability": "100.0%",
+            "sigma_25_label_stability": "100.0%"
+        },
+        "passed": true
+    },
+    "Perspective 4": {
+        "title": "Extreme Illumination Stress & Dynamic Range",
+        "metrics": {
+            "underexposed_gamma_0.4": {
+                "status": "SUCCESS",
+                "faces_localized": 1,
+                "fake_probability": 0.8951
+            },
+            "overexposed_gamma_2.2": {
+                "status": "SUCCESS",
+                "faces_localized": 1,
+                "fake_probability": 0.0288
+            }
+        },
+        "passed": true
+    },
+    "Perspective 5": {
+        "title": "Explainable AI (Grad-CAM) Saliency Concentration",
+        "metrics": {
+            "target_conv_layer": "block14_sepconv2_act",
+            "heatmap_min": 0.1193,
+            "heatmap_max": 0.9992,
+            "dominant_attention_regions": [
+                "Ocular & Forehead Region (gaze / eyebrow synthesis focus)"
+            ]
+        },
+        "passed": true
+    },
+    "Perspective 6": {
+        "title": "Video Temporal Dynamics & Sequence Biometrics (TBSC)",
+        "metrics": {
+            "authentic_seq_verdict": "REAL",
+            "authentic_seq_confidence": "86.37%",
+            "authentic_continuity_score": 0.9856,
+            "deepfake_seq_verdict": "FAKE",
+            "deepfake_seq_confidence": "75.77%",
+            "deepfake_temporal_velocity": 0.0608,
+            "deepfake_burst_prob": 0.88
+        },
+        "passed": true
+    },
+    "Perspective 7": {
+        "title": "Video Sampling Density & Frame-Drop Resilience",
+        "metrics": {
+            "dense_sample_count": 16,
+            "dense_processing_time": "1.34s",
+            "sparse_sample_count": 8,
+            "sparse_processing_time": "0.62s",
+            "verdict_consistent": true
+        },
+        "passed": true
+    },
+    "Perspective 8": {
+        "title": "Enterprise SLA Latency & Memory Determinism",
+        "metrics": {
+            "mean_latency_ms": 75.45,
+            "p95_latency_ms": 79.76,
+            "throughput_fps": 13.3,
+            "sla_target": "< 100ms per frame"
+        },
+        "passed": true
+    }
+}

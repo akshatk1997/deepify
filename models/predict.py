@@ -8,6 +8,8 @@ confidence metrics, risk tiers, and provides 100% reliable operational execution
 """
 
 import os
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 import sys
 import time
 from pathlib import Path
@@ -123,17 +125,19 @@ class DeepfakePredictor:
         r_mean, b_mean = float(np.mean(r_channel)), float(np.mean(b_channel))
         color_skew = abs((r_mean - b_mean) / (r_mean + b_mean + 1e-5))
 
-        # Calibrated Sigmoid scoring
+        # Calibrated multi-artifact scoring
+        freq_energy_norm = float(np.clip((lap_var - 250.0) / 250.0, 0.0, 1.0))
+        seam_norm = float(np.clip((freq_discontinuity - 0.82) / 0.12, 0.0, 1.0))
+        checker_norm = float(np.clip(checkerboard_energy / 0.50, 0.0, 1.0))
+        color_norm = float(np.clip(color_divergence / 0.35, 0.0, 1.0))
+
         raw_score = (
-            (freq_discontinuity * 0.35) +
-            (checkerboard_energy * 0.35) +
-            (color_skew * 0.20) +
-            (color_divergence * 0.10)
+            (freq_energy_norm * 0.40) +
+            (seam_norm * 0.35) +
+            (checker_norm * 0.15) +
+            (color_norm * 0.10)
         )
-        
-        # Logistic sigmoid scaling centered around calibrated threshold 0.345
-        fake_prob = 1.0 / (1.0 + np.exp(-14.0 * (raw_score - 0.345)))
-        fake_prob = float(np.clip(fake_prob, 0.04, 0.96))
+        fake_prob = float(np.clip(raw_score, 0.04, 0.96))
 
         breakdown = {
             "boundary_discontinuity": round(freq_discontinuity, 3),
@@ -150,14 +154,27 @@ class DeepfakePredictor:
         start_time = time.time()
         input_tensor = preprocess_face_for_model(face_rgb, TARGET_SIZE)
 
+        # Always compute forensic spatial artifact breakdown for telemetry
+        art_prob, artifact_breakdown = self._analyze_facial_artifacts(face_rgb)
+
         # If trained Keras model is loaded, execute TensorFlow forward pass
         if self.model is not None:
             raw_pred = self.model.predict(input_tensor, verbose=0)
-            fake_prob = float(raw_pred[0][0])
-            breakdown = {"engine": "XceptionNet Neural Graph"}
+            raw_score = float(np.clip(raw_pred[0][0], 1e-6, 1.0 - 1e-6))
+            
+            # Calibrated ensemble fusion (85% Trained XceptionNet Neural Graph + 15% Forensic Physical Artifacts)
+            fake_prob = float(0.85 * raw_score + 0.15 * art_prob)
+            fake_prob = float(np.clip(fake_prob, 0.01, 0.99))
+            breakdown = {
+                "engine": "XceptionNet Neural Graph + Forensic Artifact Ensemble",
+                "neural_prob": round(raw_score, 4),
+                "artifact_prob": round(art_prob, 4),
+                **artifact_breakdown
+            }
         else:
             # Execute Calibrated Adaptive Forensic Analyzer
-            fake_prob, breakdown = self._analyze_facial_artifacts(face_rgb)
+            fake_prob = art_prob
+            breakdown = artifact_breakdown
 
         real_prob = float(1.0 - fake_prob)
         is_fake = fake_prob >= 0.50

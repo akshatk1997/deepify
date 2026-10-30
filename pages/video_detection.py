@@ -253,11 +253,13 @@ def render_video_detection_page():
     with res_c2:
         st.markdown(f"""
         <div class="deepguard-card">
-            <h4 style="color: #0284c7; margin-top: 0; margin-bottom: 12px;">Multi-Frame Aggregation Telemetry</h4>
+            <h4 style="color: #0284c7; margin-top: 0; margin-bottom: 12px;">Temporal Biometric Sequence Telemetry</h4>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem;">
                 <div><span style="color: #64748b;">Aggregated Score:</span> <strong style="color: #0f172a;">{confidence}%</strong></div>
                 <div><span style="color: #64748b;">Risk Classification:</span> <strong style="color: {'#dc2626' if verdict == 'FAKE' else '#059669'};">{risk_tier}</strong></div>
                 <div><span style="color: #64748b;">Manipulated Ratio:</span> <strong style="color: #0f172a;">{results['manipulated_frames_count']} / {results['faces_detected']} ({results['manipulated_frames_ratio']}%)</strong></div>
+                <div><span style="color: #64748b;">Temporal Continuity:</span> <strong style="color: #0284c7;">{round(results.get('continuity_score', 1.0) * 100, 1)}%</strong></div>
+                <div><span style="color: #64748b;">Jitter Velocity:</span> <strong style="color: #334155;">{results.get('temporal_velocity', 0.0):.3f}</strong></div>
                 <div><span style="color: #64748b;">Processing Latency:</span> <strong style="color: #334155;">{results['processing_time_sec']}s</strong></div>
             </div>
         </div>

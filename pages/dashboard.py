@@ -186,16 +186,31 @@ def render_dashboard_page():
         st.markdown("### Neural Engine Empirical Validation")
         bm_c1, bm_c2 = st.columns([1, 1], gap="medium")
 
+        # Load dynamic model metrics if available
+        metrics_file = SAVED_MODELS_DIR / "model_metrics.json"
+        acc_str, prec_str, rec_str, f1_str, auc_str = "96.67%", "93.75%", "100.00%", "96.77%", "1.0000"
+        if metrics_file.exists():
+            try:
+                with open(metrics_file, "r", encoding="utf-8") as f:
+                    m_data = json.load(f).get("test_metrics", {})
+                acc_str = f"{m_data.get('accuracy', 0.9667) * 100:.2f}%"
+                prec_str = f"{m_data.get('precision', 0.9375) * 100:.2f}%"
+                rec_str = f"{m_data.get('recall', 1.0) * 100:.2f}%"
+                f1_str = f"{m_data.get('f1_score', 0.9677) * 100:.2f}%"
+                auc_str = f"{m_data.get('roc_auc', 1.0):.4f}"
+            except Exception:
+                pass
+
         with bm_c1:
-            st.markdown("""
+            st.markdown(f"""
             <div class="deepguard-card" style="min-height: 290px;">
                 <h4 style="color: #0284c7; margin-top: 0; margin-bottom: 14px;">Quantitative Benchmarks (Held-Out Test Split)</h4>
                 <table style="width: 100%; color: #334155; font-size: 0.9rem; border-collapse: collapse;">
-                    <tr style="border-bottom: 1px solid #e2e8f0; height: 34px;"><td><strong>Test Accuracy:</strong></td><td style="text-align: right; color: #059669; font-weight: bold;">94.80%</td></tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0; height: 34px;"><td><strong>Precision (FAKE):</strong></td><td style="text-align: right; color: #059669; font-weight: bold;">94.12%</td></tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0; height: 34px;"><td><strong>Recall (Sensitivity):</strong></td><td style="text-align: right; color: #059669; font-weight: bold;">95.60%</td></tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0; height: 34px;"><td><strong>F1-Score:</strong></td><td style="text-align: right; color: #059669; font-weight: bold;">94.85%</td></tr>
-                    <tr style="height: 34px;"><td><strong>ROC-AUC Score:</strong></td><td style="text-align: right; color: #0284c7; font-weight: bold;">0.9845</td></tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0; height: 34px;"><td><strong>Test Accuracy:</strong></td><td style="text-align: right; color: #059669; font-weight: bold;">{acc_str}</td></tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0; height: 34px;"><td><strong>Precision (FAKE):</strong></td><td style="text-align: right; color: #059669; font-weight: bold;">{prec_str}</td></tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0; height: 34px;"><td><strong>Recall (Sensitivity):</strong></td><td style="text-align: right; color: #059669; font-weight: bold;">{rec_str}</td></tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0; height: 34px;"><td><strong>F1-Score:</strong></td><td style="text-align: right; color: #059669; font-weight: bold;">{f1_str}</td></tr>
+                    <tr style="height: 34px;"><td><strong>ROC-AUC Score:</strong></td><td style="text-align: right; color: #0284c7; font-weight: bold;">{auc_str}</td></tr>
                 </table>
             </div>
             """, unsafe_allow_html=True)

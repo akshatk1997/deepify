@@ -1,0 +1,33 @@
+{
+    "model_type": "Temporal Biometric Sequence Classifier (TBSC)",
+    "version": "1.2.0",
+    "feature_names": [
+        "mean_fake_prob",
+        "max_burst_prob",
+        "top_k_burst_prob",
+        "temporal_variance",
+        "temporal_velocity",
+        "manipulated_ratio",
+        "flicker_index",
+        "continuity_score"
+    ],
+    "weights": [
+        0.826407,
+        1.114147,
+        1.104573,
+        0.081745,
+        0.101188,
+        1.110514,
+        0.185054,
+        -1.309373
+    ],
+    "bias": -0.84615,
+    "decision_threshold": 0.5,
+    "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "num_training_sequences": 100
+    }
+}

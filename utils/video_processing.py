@@ -24,16 +24,19 @@ sys.path.append(str(BASE_DIR))
 
 from utils.face_detection import FaceDetector
 from models.predict import DeepfakePredictor
+from models.temporal_video_model import TemporalVideoClassifier
 
 
 class VideoProcessor:
     """
-    Forensic video analysis engine supporting MP4, AVI, MOV with temporal aggregation.
+    Forensic video analysis engine supporting MP4, AVI, MOV with temporal aggregation
+    and biometric sequence classification.
     """
 
-    def __init__(self, predictor: Optional[DeepfakePredictor] = None):
+    def __init__(self, predictor: Optional[DeepfakePredictor] = None, temporal_model: Optional[TemporalVideoClassifier] = None):
         self.detector = FaceDetector(margin_ratio=0.20)
         self.predictor = predictor or DeepfakePredictor()
+        self.temporal_model = temporal_model or TemporalVideoClassifier()
 
     @staticmethod
     def get_video_metadata(video_path: str) -> Dict[str, Any]:
@@ -194,18 +197,26 @@ class VideoProcessor:
         manipulated_count = sum(1 for p in fake_probs if p >= 0.50)
         manipulated_ratio = manipulated_count / len(face_frames)
 
+        # Execute Temporal Video Classifier Inference
+        temporal_pred = self.temporal_model.predict_video_timeline(frame_timeline)
+        temp_features = temporal_pred.get("feature_vector", {})
+        temp_fake_prob = temporal_pred.get("fake_probability", mean_fake_prob)
+
         # Video-Level Forensic Classification Rule:
-        # A video is a deepfake if >= 20% frames are manipulated or top-K burst >= 0.75
-        is_video_fake = (manipulated_ratio >= 0.20) or (top_k_fake_prob >= 0.75)
+        # FAKE if temporal biometric sequence model classifies as fake,
+        # OR manipulated frame ratio >= 25%, OR top-K burst >= 0.75
+        is_video_fake = bool(temporal_pred.get("is_fake", False) or (manipulated_ratio >= 0.25) or (top_k_fake_prob >= 0.75))
 
         if is_video_fake:
             overall_verdict = "FAKE"
-            overall_confidence = round(max(mean_fake_prob, top_k_fake_prob) * 100, 2)
-            risk_tier = "CRITICAL" if top_k_fake_prob > 0.85 else "HIGH"
+            eff_prob = max(mean_fake_prob, top_k_fake_prob, temp_fake_prob)
+            overall_confidence = round(eff_prob * 100, 2)
+            risk_tier = "CRITICAL" if eff_prob > 0.85 else "HIGH"
         else:
             overall_verdict = "REAL"
-            overall_confidence = round(mean_real_prob * 100, 2)
-            risk_tier = "LOW (AUTHENTIC)" if mean_real_prob > 0.85 else "MODERATE"
+            eff_prob = max(mean_real_prob, 1.0 - temp_fake_prob)
+            overall_confidence = round(eff_prob * 100, 2)
+            risk_tier = "LOW (AUTHENTIC)" if eff_prob > 0.85 else "MODERATE"
 
         # Sort suspicious frames from highest fake probability to lowest
         suspicious_frames.sort(key=lambda item: item["fake_probability"], reverse=True)
@@ -225,5 +236,9 @@ class VideoProcessor:
             "faces_detected": total_faces_found,
             "processing_time_sec": total_time_sec,
             "timeline": frame_timeline,
-            "suspicious_frames": suspicious_frames[:6]  # Top 6 suspicious frames
+            "suspicious_frames": suspicious_frames[:6],  # Top 6 suspicious frames
+            "temporal_model_prediction": temporal_pred,
+            "temporal_velocity": temp_features.get("temporal_velocity", 0.0),
+            "flicker_index": temp_features.get("flicker_index", 0.0),
+            "continuity_score": temp_features.get("continuity_score", 1.0)
         }

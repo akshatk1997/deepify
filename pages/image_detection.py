@@ -31,10 +31,10 @@ def render_image_detection_page():
     # SaaS Enterprise Header Bar
     st.markdown("""
     <div class="saas-header-bar">
-        <div style="font-weight: 700; color: #f8fafc; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-            <span style="color: #00d2ff;">🛡️ DEEPGUARD AI</span>
-            <span style="color: #64748b;">|</span>
-            <span style="color: #94a3b8; font-weight: 500;">Image Forensic Lab</span>
+        <div style="font-weight: 700; color: #0f172a; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #2563eb;">🛡️ DEEPGUARD AI</span>
+            <span style="color: #cbd5e1;">|</span>
+            <span style="color: #475569; font-weight: 500;">Image Forensic Lab</span>
         </div>
         <div class="saas-badge-group">
             <span class="saas-pill saas-pill-live"><span class="saas-pill-pulse"></span> Neural Core Online</span>
@@ -59,10 +59,10 @@ def render_image_detection_page():
     # Quick Demo Selector Bar
     st.markdown("""
     <div class="demo-bar-container">
-        <div style="font-weight: 600; color: #38bdf8; font-size: 0.92rem; margin-bottom: 8px;">
-            🎯 One-Click Verification Sandbox: Load Pre-Validated Benchmark Portrais
+        <div style="font-weight: 700; color: #0284c7; font-size: 0.94rem; margin-bottom: 6px;">
+            🎯 One-Click Verification Sandbox: Load Pre-Validated Benchmark Portraits
         </div>
-        <div style="color: #94a3b8; font-size: 0.82rem; margin-bottom: 12px;">
+        <div style="color: #64748b; font-size: 0.85rem; margin-bottom: 8px;">
             Test the forensic engine immediately with authentic camera captures, synthetic face-swaps, or boundary test canvases.
         </div>
     </div>
@@ -161,13 +161,13 @@ def render_image_detection_page():
     # Handle Zero-Face Detected
     if analysis["status"] == "NO_FACE_DETECTED":
         st.markdown(f"""
-        <div class="deepguard-card" style="border-left: 4px solid #f59e0b;">
+        <div class="deepguard-card" style="border-left: 4px solid #f59e0b; background: #fffbeb;">
             <div class="badge-inconclusive">⚠️ VERDICT: INCONCLUSIVE (NO USABLE FACES)</div>
-            <h3 style="color: #fbbf24; margin-top: 14px;">No Human Facial Subject Localized</h3>
-            <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">
+            <h3 style="color: #b45309; margin-top: 14px; margin-bottom: 6px;">No Human Facial Subject Localized</h3>
+            <p style="color: #334155; font-size: 0.95rem; line-height: 1.6;">
                 {analysis['message']}
             </p>
-            <p style="color: #94a3b8; font-size: 0.88rem;">
+            <p style="color: #64748b; font-size: 0.88rem; margin-bottom: 0;">
                 DEEPGUARD AI enforces strict forensic standards: non-facial imagery is cleanly marked 
                 <strong>INCONCLUSIVE</strong> to avoid hallucinated false classifications.
             </p>
@@ -200,10 +200,10 @@ def render_image_detection_page():
 
         if verdict == "FAKE":
             st.markdown("""
-            <div class="deepguard-card" style="border-color: rgba(239, 68, 68, 0.45); background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);">
+            <div class="deepguard-card" style="border-color: #fca5a5; background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);">
                 <div class="badge-fake">🚨 FAKE / MANIPULATED MEDIA</div>
-                <h2 style="color: #ef4444; margin-top: 12px; margin-bottom: 6px;">SYNTHETIC ANOMALIES DETECTED</h2>
-                <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.55;">
+                <h2 style="color: #dc2626; margin-top: 12px; margin-bottom: 6px;">SYNTHETIC ANOMALIES DETECTED</h2>
+                <p style="color: #334155; font-size: 0.9rem; line-height: 1.55;">
                     The neural engine identified characteristic deepfake facial synthesis markers, 
                     such as boundary blending seams, GAN deconvolution frequencies, or ocular artifacts.
                 </p>
@@ -211,10 +211,10 @@ def render_image_detection_page():
             """, unsafe_allow_html=True)
         else:
             st.markdown("""
-            <div class="deepguard-card" style="border-color: rgba(16, 185, 129, 0.45); background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);">
+            <div class="deepguard-card" style="border-color: #a7f3d0; background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);">
                 <div class="badge-real">🛡️ REAL / AUTHENTIC MEDIA</div>
-                <h2 style="color: #10b981; margin-top: 12px; margin-bottom: 6px;">BIOMETRIC INTEGRITY CONFIRMED</h2>
-                <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.55;">
+                <h2 style="color: #059669; margin-top: 12px; margin-bottom: 6px;">BIOMETRIC INTEGRITY CONFIRMED</h2>
+                <p style="color: #334155; font-size: 0.9rem; line-height: 1.55;">
                     Organic facial skin tone continuity, consistent ocular light reflections, and 
                     natural high-frequency boundary distributions consistent with authentic camera captures.
                 </p>
@@ -224,12 +224,12 @@ def render_image_detection_page():
         # Telemetry Card
         st.markdown(f"""
         <div class="deepguard-card">
-            <h4 style="color: #00d2ff; margin-top: 0; margin-bottom: 12px;">Forensic Inspection Telemetry</h4>
+            <h4 style="color: #0284c7; margin-top: 0; margin-bottom: 12px;">Forensic Inspection Telemetry</h4>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem;">
-                <div><span style="color: #94a3b8;">Confidence Score:</span> <strong style="color: #ffffff;">{confidence}%</strong></div>
-                <div><span style="color: #94a3b8;">Risk Classification:</span> <strong style="color: {'#ef4444' if verdict == 'FAKE' else '#10b981'};">{risk_tier}</strong></div>
-                <div><span style="color: #94a3b8;">Inference Latency:</span> <strong style="color: #cbd5e1;">{analysis['inference_time_ms']} ms</strong></div>
-                <div><span style="color: #94a3b8;">Engine Mode:</span> <strong style="color: #00d2ff;">{analysis.get('engine_type', 'XceptionNet')}</strong></div>
+                <div><span style="color: #64748b;">Confidence Score:</span> <strong style="color: #0f172a;">{confidence}%</strong></div>
+                <div><span style="color: #64748b;">Risk Classification:</span> <strong style="color: {'#dc2626' if verdict == 'FAKE' else '#059669'};">{risk_tier}</strong></div>
+                <div><span style="color: #64748b;">Inference Latency:</span> <strong style="color: #334155;">{analysis['inference_time_ms']} ms</strong></div>
+                <div><span style="color: #64748b;">Engine Mode:</span> <strong style="color: #0284c7;">{analysis.get('engine_type', 'XceptionNet')}</strong></div>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -275,8 +275,8 @@ def render_image_detection_page():
     st.markdown(f"""
     <div class="cyber-alert-info">
         <strong>🔍 Neural Focus Analysis:</strong> Model gradient attention is concentrated heavily on: 
-        <strong style="color: #00d2ff;">{dominant_str}</strong>.<br>
-        <small style="color: #94a3b8;">
+        <strong style="color: #1d4ed8;">{dominant_str}</strong>.<br>
+        <small style="color: #475569;">
             Warmer colors (red/orange) represent high spatial attention contributing to the classification logit;
             cooler regions (blue/cyan) represent background or unweighted feature regions.
         </small>

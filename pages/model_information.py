@@ -25,10 +25,10 @@ def render_model_information_page():
     # SaaS Header Bar
     st.markdown("""
     <div class="saas-header-bar">
-        <div style="font-weight: 700; color: #f8fafc; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-            <span style="color: #00d2ff;">🛡️ DEEPGUARD AI</span>
-            <span style="color: #64748b;">|</span>
-            <span style="color: #94a3b8; font-weight: 500;">Neural Architecture & Benchmarks</span>
+        <div style="font-weight: 700; color: #0f172a; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #2563eb;">🛡️ DEEPGUARD AI</span>
+            <span style="color: #cbd5e1;">|</span>
+            <span style="color: #475569; font-weight: 500;">Neural Architecture & Benchmarks</span>
         </div>
         <div class="saas-badge-group">
             <span class="saas-pill saas-pill-live"><span class="saas-pill-pulse"></span> Backbone: XceptionNet</span>
@@ -76,25 +76,25 @@ def render_model_information_page():
     with sc1:
         st.markdown(f"""
         <div class="deepguard-card" style="height: 100%;">
-            <span style="color: #94a3b8; font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">EFFECTIVE SENSITIVITY (RECALL)</span>
-            <h2 style="color: #34d399; margin: 8px 0 4px 0; font-size: 2rem;">{sim_recall}%</h2>
-            <small style="color: #94a3b8;">Probability of catching synthetic media</small>
+            <span style="color: #64748b; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;">EFFECTIVE SENSITIVITY (RECALL)</span>
+            <h2 style="color: #059669; margin: 8px 0 4px 0; font-size: 2rem;">{sim_recall}%</h2>
+            <small style="color: #64748b;">Probability of catching synthetic media</small>
         </div>
         """, unsafe_allow_html=True)
     with sc2:
         st.markdown(f"""
         <div class="deepguard-card" style="height: 100%;">
-            <span style="color: #94a3b8; font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">FORENSIC PRECISION</span>
-            <h2 style="color: #00d2ff; margin: 8px 0 4px 0; font-size: 2rem;">{sim_precision}%</h2>
-            <small style="color: #94a3b8;">Confidence when flagging as manipulated</small>
+            <span style="color: #64748b; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;">FORENSIC PRECISION</span>
+            <h2 style="color: #0284c7; margin: 8px 0 4px 0; font-size: 2rem;">{sim_precision}%</h2>
+            <small style="color: #64748b;">Confidence when flagging as manipulated</small>
         </div>
         """, unsafe_allow_html=True)
     with sc3:
         st.markdown(f"""
         <div class="deepguard-card" style="height: 100%;">
-            <span style="color: #94a3b8; font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">HARMONIC F1-SCORE</span>
-            <h2 style="color: #a855f7; margin: 8px 0 4px 0; font-size: 2rem;">{sim_f1}%</h2>
-            <small style="color: #94a3b8;">Balanced operational equilibrium</small>
+            <span style="color: #64748b; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;">HARMONIC F1-SCORE</span>
+            <h2 style="color: #7c3aed; margin: 8px 0 4px 0; font-size: 2rem;">{sim_f1}%</h2>
+            <small style="color: #64748b;">Balanced operational equilibrium</small>
         </div>
         """, unsafe_allow_html=True)
 
@@ -112,15 +112,15 @@ def render_model_information_page():
         st.markdown("### Depthwise Separable Convolutions in Media Forensics")
         st.markdown("""
         <div class="deepguard-card">
-            <p style="color: #cbd5e1; line-height: 1.7; font-size: 0.95rem;">
+            <p style="color: #334155; line-height: 1.7; font-size: 0.95rem;">
                 Standard CNNs process spatial cross-correlations and channel-wise correlations simultaneously within each kernel filter.
                 <strong>XceptionNet</strong> completely separates these mathematical domains:
             </p>
-            <ol style="color: #94a3b8; line-height: 1.8; font-size: 0.9rem;">
+            <ol style="color: #475569; line-height: 1.8; font-size: 0.9rem;">
                 <li><strong>Depthwise Spatial Convolution:</strong> Applies an independent 3×3 spatial filter to each RGB channel separately, isolating channel-specific textures.</li>
                 <li><strong>Pointwise Linear Projection:</strong> Applies a 1×1 convolution across all channels, capturing cross-channel frequency misalignments.</li>
             </ol>
-            <p style="color: #cbd5e1; line-height: 1.7; font-size: 0.95rem;">
+            <p style="color: #334155; line-height: 1.7; font-size: 0.95rem;">
                 This decoupled topology is exceptionally effective at isolating <strong>deepfake blending boundary seams</strong>,
                 chromatic aberration fringing along the jawline, and GAN deconvolution checkerboard artifacts.
             </p>
@@ -153,9 +153,9 @@ def render_model_information_page():
     with t_disclosures:
         st.markdown("### Forensic Boundaries & Disclosures")
         st.markdown("""
-        <div class="deepguard-card" style="border-left: 4px solid #f59e0b;">
-            <h4 style="color: #fbbf24; margin-top: 0;">Operational Constraints & Known Limitations</h4>
-            <ul style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.8; margin-bottom: 0;">
+        <div class="deepguard-card" style="border-left: 4px solid #f59e0b; background: #fffbeb;">
+            <h4 style="color: #b45309; margin-top: 0;">Operational Constraints & Known Limitations</h4>
+            <ul style="color: #334155; font-size: 0.9rem; line-height: 1.8; margin-bottom: 0;">
                 <li><strong>Severe Platform Compression:</strong> Heavy H.264/H.265 compression (e.g. WhatsApp or Twitter) can destroy high-frequency manipulation boundaries.</li>
                 <li><strong>Extreme Profile Angles:</strong> Subjects turned >60° away from the camera optical axis reduce face localization reliability.</li>
                 <li><strong>Inconclusive Standard:</strong> DEEPGUARD AI outputs INCONCLUSIVE rather than guessing whenever human facial features are un-detected.</li>

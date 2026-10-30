@@ -32,10 +32,10 @@ def render_video_detection_page():
     # SaaS Enterprise Header Bar
     st.markdown("""
     <div class="saas-header-bar">
-        <div style="font-weight: 700; color: #f8fafc; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-            <span style="color: #00d2ff;">🛡️ DEEPGUARD AI</span>
-            <span style="color: #64748b;">|</span>
-            <span style="color: #94a3b8; font-weight: 500;">Temporal Video Forensics</span>
+        <div style="font-weight: 700; color: #0f172a; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #2563eb;">🛡️ DEEPGUARD AI</span>
+            <span style="color: #cbd5e1;">|</span>
+            <span style="color: #475569; font-weight: 500;">Temporal Video Forensics</span>
         </div>
         <div class="saas-badge-group">
             <span class="saas-pill saas-pill-live"><span class="saas-pill-pulse"></span> Video Decoder Ready</span>
@@ -61,10 +61,10 @@ def render_video_detection_page():
     # Quick Demo Selector
     st.markdown("""
     <div class="demo-bar-container">
-        <div style="font-weight: 600; color: #38bdf8; font-size: 0.92rem; margin-bottom: 8px;">
+        <div style="font-weight: 700; color: #0284c7; font-size: 0.94rem; margin-bottom: 6px;">
             🎯 Quick Sandbox: Test with Verified Benchmark Video Stream
         </div>
-        <div style="color: #94a3b8; font-size: 0.82rem; margin-bottom: 12px;">
+        <div style="color: #64748b; font-size: 0.85rem; margin-bottom: 8px;">
             Loads a pre-rendered 60-frame 30FPS benchmark video stream (<code>assets/sample_test_video.mp4</code>).
         </div>
     </div>
@@ -140,14 +140,14 @@ def render_video_detection_page():
     with grid_v2:
         st.markdown(f"""
         <div class="deepguard-card">
-            <h4 style="color: #00d2ff; margin-top: 0; margin-bottom: 12px;">Container Technical Telemetry</h4>
+            <h4 style="color: #0284c7; margin-top: 0; margin-bottom: 12px;">Container Technical Telemetry</h4>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem;">
-                <div><span style="color: #94a3b8;">Filename:</span> <strong style="color: #f8fafc;">{active_video_name}</strong></div>
-                <div><span style="color: #94a3b8;">Spatial Resolution:</span> <strong style="color: #f8fafc;">{meta.get('resolution', 'N/A')}</strong></div>
-                <div><span style="color: #94a3b8;">Container Framerate:</span> <strong style="color: #f8fafc;">{meta.get('fps', 'N/A')} FPS</strong></div>
-                <div><span style="color: #94a3b8;">Total Frame Count:</span> <strong style="color: #f8fafc;">{meta.get('frame_count', 'N/A')}</strong></div>
-                <div><span style="color: #94a3b8;">Total Duration:</span> <strong style="color: #f8fafc;">{meta.get('duration_sec', 'N/A')}s</strong></div>
-                <div><span style="color: #94a3b8;">Target Samples:</span> <strong style="color: #00d2ff;">{sample_count} frames</strong></div>
+                <div><span style="color: #64748b;">Filename:</span> <strong style="color: #0f172a;">{active_video_name}</strong></div>
+                <div><span style="color: #64748b;">Spatial Resolution:</span> <strong style="color: #0f172a;">{meta.get('resolution', 'N/A')}</strong></div>
+                <div><span style="color: #64748b;">Container Framerate:</span> <strong style="color: #0f172a;">{meta.get('fps', 'N/A')} FPS</strong></div>
+                <div><span style="color: #64748b;">Total Frame Count:</span> <strong style="color: #0f172a;">{meta.get('frame_count', 'N/A')}</strong></div>
+                <div><span style="color: #64748b;">Total Duration:</span> <strong style="color: #0f172a;">{meta.get('duration_sec', 'N/A')}s</strong></div>
+                <div><span style="color: #64748b;">Target Samples:</span> <strong style="color: #0284c7;">{sample_count} frames</strong></div>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -209,10 +209,10 @@ def render_video_detection_page():
     # Handle Inconclusive
     if results["status"] == "INCONCLUSIVE":
         st.markdown("""
-        <div class="deepguard-card" style="border-left: 4px solid #f59e0b;">
+        <div class="deepguard-card" style="border-left: 4px solid #f59e0b; background: #fffbeb;">
             <div class="badge-inconclusive">⚠️ VERDICT: INCONCLUSIVE (NO FACES FOUND)</div>
-            <h3 style="color: #fbbf24; margin-top: 14px;">Facial Continuity Verification Aborted</h3>
-            <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">
+            <h3 style="color: #b45309; margin-top: 14px; margin-bottom: 6px;">Facial Continuity Verification Aborted</h3>
+            <p style="color: #334155; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
                 No clear facial features could be isolated across the sampled intervals. 
                 Forensic verification requires visible facial subjects.
             </p>
@@ -231,20 +231,20 @@ def render_video_detection_page():
     with res_c1:
         if verdict == "FAKE":
             st.markdown("""
-            <div class="deepguard-card" style="border-color: rgba(239, 68, 68, 0.45); background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);">
+            <div class="deepguard-card" style="border-color: #fca5a5; background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);">
                 <div class="badge-fake">🚨 OVERALL VERDICT: FAKE VIDEO DETECTED</div>
-                <h2 style="color: #ef4444; margin-top: 12px; margin-bottom: 6px;">TEMPORAL MANIPULATION CONFIRMED</h2>
-                <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.55;">
+                <h2 style="color: #dc2626; margin-top: 12px; margin-bottom: 6px;">TEMPORAL MANIPULATION CONFIRMED</h2>
+                <p style="color: #334155; font-size: 0.9rem; line-height: 1.55;">
                     Multi-frame probability aggregation identified recurring AI-synthesized facial anomalies across the sampled timeline.
                 </p>
             </div>
             """, unsafe_allow_html=True)
         else:
             st.markdown("""
-            <div class="deepguard-card" style="border-color: rgba(16, 185, 129, 0.45); background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);">
+            <div class="deepguard-card" style="border-color: #a7f3d0; background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);">
                 <div class="badge-real">🛡️ OVERALL VERDICT: REAL VIDEO VERIFIED</div>
-                <h2 style="color: #10b981; margin-top: 12px; margin-bottom: 6px;">BIOMETRIC CONTINUITY VERIFIED</h2>
-                <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.55;">
+                <h2 style="color: #059669; margin-top: 12px; margin-bottom: 6px;">BIOMETRIC CONTINUITY VERIFIED</h2>
+                <p style="color: #334155; font-size: 0.9rem; line-height: 1.55;">
                     Natural biometric skin frequencies and temporal continuity confirmed across all analyzed frames.
                 </p>
             </div>
@@ -253,12 +253,12 @@ def render_video_detection_page():
     with res_c2:
         st.markdown(f"""
         <div class="deepguard-card">
-            <h4 style="color: #00d2ff; margin-top: 0; margin-bottom: 12px;">Multi-Frame Aggregation Telemetry</h4>
+            <h4 style="color: #0284c7; margin-top: 0; margin-bottom: 12px;">Multi-Frame Aggregation Telemetry</h4>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem;">
-                <div><span style="color: #94a3b8;">Aggregated Score:</span> <strong style="color: #ffffff;">{confidence}%</strong></div>
-                <div><span style="color: #94a3b8;">Risk Classification:</span> <strong style="color: {'#ef4444' if verdict == 'FAKE' else '#10b981'};">{risk_tier}</strong></div>
-                <div><span style="color: #94a3b8;">Manipulated Ratio:</span> <strong style="color: #f8fafc;">{results['manipulated_frames_count']} / {results['faces_detected']} ({results['manipulated_frames_ratio']}%)</strong></div>
-                <div><span style="color: #94a3b8;">Processing Latency:</span> <strong style="color: #cbd5e1;">{results['processing_time_sec']}s</strong></div>
+                <div><span style="color: #64748b;">Aggregated Score:</span> <strong style="color: #0f172a;">{confidence}%</strong></div>
+                <div><span style="color: #64748b;">Risk Classification:</span> <strong style="color: {'#dc2626' if verdict == 'FAKE' else '#059669'};">{risk_tier}</strong></div>
+                <div><span style="color: #64748b;">Manipulated Ratio:</span> <strong style="color: #0f172a;">{results['manipulated_frames_count']} / {results['faces_detected']} ({results['manipulated_frames_ratio']}%)</strong></div>
+                <div><span style="color: #64748b;">Processing Latency:</span> <strong style="color: #334155;">{results['processing_time_sec']}s</strong></div>
             </div>
         </div>
         """, unsafe_allow_html=True)

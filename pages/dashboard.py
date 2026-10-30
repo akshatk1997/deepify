@@ -42,10 +42,10 @@ def render_dashboard_page():
     # SaaS Enterprise Header Bar
     st.markdown("""
     <div class="saas-header-bar">
-        <div style="font-weight: 700; color: #f8fafc; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-            <span style="color: #00d2ff;">🛡️ DEEPGUARD AI</span>
-            <span style="color: #64748b;">|</span>
-            <span style="color: #94a3b8; font-weight: 500;">Forensic Operations Center</span>
+        <div style="font-weight: 700; color: #0f172a; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #2563eb;">🛡️ DEEPGUARD AI</span>
+            <span style="color: #cbd5e1;">|</span>
+            <span style="color: #475569; font-weight: 500;">Forensic Operations Center</span>
         </div>
         <div class="saas-badge-group">
             <span class="saas-pill saas-pill-live"><span class="saas-pill-pulse"></span> Systems Operational</span>
@@ -97,7 +97,7 @@ def render_dashboard_page():
     with c2:
         st.markdown(f"""
         <div class="stat-pill">
-            <span class="stat-value" style="background: linear-gradient(135deg, #34d399 0%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">{real_count}</span>
+            <span class="stat-value" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">{real_count}</span>
             <span class="stat-label">Authentic (REAL) Media</span>
         </div>
         """, unsafe_allow_html=True)
@@ -105,7 +105,7 @@ def render_dashboard_page():
     with c3:
         st.markdown(f"""
         <div class="stat-pill">
-            <span class="stat-value" style="background: linear-gradient(135deg, #f87171 0%, #ef4444 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">{fake_count}</span>
+            <span class="stat-value" style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">{fake_count}</span>
             <span class="stat-label">Manipulated (FAKE) Alerts</span>
         </div>
         """, unsafe_allow_html=True)
@@ -145,8 +145,8 @@ def render_dashboard_page():
         with l_col1:
             st.markdown("""
             <div class="deepguard-card" style="min-height: 175px;">
-                <h3 style="color: #00d2ff; margin-top: 0; font-size: 1.15rem;">🖼️ Single-Image Forensic Studio</h3>
-                <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">
+                <h3 style="color: #0284c7; margin-top: 0; font-size: 1.15rem;">🖼️ Single-Image Forensic Studio</h3>
+                <p style="color: #334155; font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">
                     Upload high-resolution static portraits (JPG, JPEG, PNG). Isolates subjects with an 
                     <strong>expanded 20% boundary margin</strong>, detects face-swap blending seams, 
                     computes XceptionNet logits, and renders 3-column Grad-CAM thermal overlays.
@@ -159,8 +159,8 @@ def render_dashboard_page():
         with l_col2:
             st.markdown("""
             <div class="deepguard-card" style="min-height: 175px;">
-                <h3 style="color: #8b5cf6; margin-top: 0; font-size: 1.15rem;">🎥 Video Stream Temporal Lab</h3>
-                <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">
+                <h3 style="color: #4f46e5; margin-top: 0; font-size: 1.15rem;">🎥 Video Stream Temporal Lab</h3>
+                <p style="color: #334155; font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">
                     Inspect multi-frame video containers (MP4, AVI, MOV). Uniformly samples frames, 
                     evaluates <strong>temporal probability aggregation</strong>, generates manipulation risk 
                     timelines, and surfaces isolated suspicious frames.
@@ -189,13 +189,13 @@ def render_dashboard_page():
         with bm_c1:
             st.markdown("""
             <div class="deepguard-card" style="min-height: 290px;">
-                <h4 style="color: #00d2ff; margin-top: 0; margin-bottom: 14px;">Quantitative Benchmarks (Held-Out Test Split)</h4>
-                <table style="width: 100%; color: #cbd5e1; font-size: 0.9rem; border-collapse: collapse;">
-                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); height: 34px;"><td><strong>Test Accuracy:</strong></td><td style="text-align: right; color: #34d399; font-weight: bold;">94.80%</td></tr>
-                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); height: 34px;"><td><strong>Precision (FAKE):</strong></td><td style="text-align: right; color: #34d399; font-weight: bold;">94.12%</td></tr>
-                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); height: 34px;"><td><strong>Recall (Sensitivity):</strong></td><td style="text-align: right; color: #34d399; font-weight: bold;">95.60%</td></tr>
-                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); height: 34px;"><td><strong>F1-Score:</strong></td><td style="text-align: right; color: #34d399; font-weight: bold;">94.85%</td></tr>
-                    <tr style="height: 34px;"><td><strong>ROC-AUC Score:</strong></td><td style="text-align: right; color: #00d2ff; font-weight: bold;">0.9845</td></tr>
+                <h4 style="color: #0284c7; margin-top: 0; margin-bottom: 14px;">Quantitative Benchmarks (Held-Out Test Split)</h4>
+                <table style="width: 100%; color: #334155; font-size: 0.9rem; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid #e2e8f0; height: 34px;"><td><strong>Test Accuracy:</strong></td><td style="text-align: right; color: #059669; font-weight: bold;">94.80%</td></tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0; height: 34px;"><td><strong>Precision (FAKE):</strong></td><td style="text-align: right; color: #059669; font-weight: bold;">94.12%</td></tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0; height: 34px;"><td><strong>Recall (Sensitivity):</strong></td><td style="text-align: right; color: #059669; font-weight: bold;">95.60%</td></tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0; height: 34px;"><td><strong>F1-Score:</strong></td><td style="text-align: right; color: #059669; font-weight: bold;">94.85%</td></tr>
+                    <tr style="height: 34px;"><td><strong>ROC-AUC Score:</strong></td><td style="text-align: right; color: #0284c7; font-weight: bold;">0.9845</td></tr>
                 </table>
             </div>
             """, unsafe_allow_html=True)

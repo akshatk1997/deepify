@@ -40,10 +40,10 @@ def render_history_page():
     history = st.session_state.analysis_history
     st.markdown(f"""
     <div class="saas-header-bar">
-        <div style="font-weight: 700; color: #f8fafc; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-            <span style="color: #00d2ff;">🛡️ DEEPGUARD AI</span>
-            <span style="color: #64748b;">|</span>
-            <span style="color: #94a3b8; font-weight: 500;">Forensic Audit Trail</span>
+        <div style="font-weight: 700; color: #0f172a; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #2563eb;">🛡️ DEEPGUARD AI</span>
+            <span style="color: #cbd5e1;">|</span>
+            <span style="color: #475569; font-weight: 500;">Forensic Audit Trail</span>
         </div>
         <div class="saas-badge-group">
             <span class="saas-pill saas-pill-live"><span class="saas-pill-pulse"></span> Audit Logging Active</span>
@@ -66,7 +66,7 @@ def render_history_page():
     if not history:
         st.markdown("""
         <div class="deepguard-card" style="text-align: center; padding: 36px;">
-            <h3 style="color: #94a3b8; margin-top: 0;">No Active Investigation Records Found</h3>
+            <h3 style="color: #334155; margin-top: 0;">No Active Investigation Records Found</h3>
             <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">
                 Run single-image or video forensic analyses to generate immutable session audit logs,
                 or click below to load pre-configured demonstration investigation records.
@@ -105,10 +105,10 @@ def render_history_page():
         st.markdown(f'<div class="stat-pill"><span class="stat-value">{len(filtered)}</span><span class="stat-label">Matching Audit Records</span></div>', unsafe_allow_html=True)
     with m2:
         reals = sum(1 for i in filtered if i.get("verdict") == "REAL")
-        st.markdown(f'<div class="stat-pill"><span class="stat-value" style="color: #34d399;">{reals}</span><span class="stat-label">Authentic (REAL) Matches</span></div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="stat-pill"><span class="stat-value" style="color: #059669;">{reals}</span><span class="stat-label">Authentic (REAL) Matches</span></div>', unsafe_allow_html=True)
     with m3:
         fakes = sum(1 for i in filtered if i.get("verdict") == "FAKE")
-        st.markdown(f'<div class="stat-pill"><span class="stat-value" style="color: #f87171;">{fakes}</span><span class="stat-label">Manipulated (FAKE) Alerts</span></div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="stat-pill"><span class="stat-value" style="color: #dc2626;">{fakes}</span><span class="stat-label">Manipulated (FAKE) Alerts</span></div>', unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
 

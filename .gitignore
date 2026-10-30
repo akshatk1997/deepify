@@ -21,19 +21,14 @@ desktop.ini
 .vscode/*
 !.vscode/settings.json
 
-# Dataset media (preserve directory structure via .gitkeep)
-dataset/train/real/*
-!dataset/train/real/.gitkeep
-dataset/train/fake/*
-!dataset/train/fake/.gitkeep
-dataset/validation/real/*
-!dataset/validation/real/.gitkeep
-dataset/validation/fake/*
-!dataset/validation/fake/.gitkeep
-dataset/test/real/*
-!dataset/test/real/.gitkeep
-dataset/test/fake/*
-!dataset/test/fake/.gitkeep
+# Dataset media (allow sample benchmark data for immediate out-of-the-box testing)
+!dataset/train/real/*.jpg
+!dataset/train/fake/*.jpg
+!dataset/validation/real/*.jpg
+!dataset/validation/fake/*.jpg
+!dataset/test/real/*.jpg
+!dataset/test/fake/*.jpg
+!dataset/**/.gitkeep
 
 # Temporary analysis files
 temp_uploads/
@@ -44,12 +39,12 @@ temp_frames/
 reports/*.pdf
 !reports/.gitkeep
 
-# Saved heavy ML models (weights, checkpoints, keras/h5 binaries)
-saved_models/*.keras
-saved_models/*.h5
-saved_models/*.pb
+# Heavy ML checkpoints (keep production models and JSONs)
+*.h5
+*.pb
+!saved_models/xception_deepfake.keras
+!saved_models/temporal_video_model.json
 !saved_models/.gitkeep
-!saved_models/model_metrics.json
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/

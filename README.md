@@ -1,5 +1,7 @@
 # DEEPGUARD AI – Deepfake Detection & Media Authenticity Verification System
 
+[![GitHub Repo](https://img.shields.io/badge/GitHub-akshatk1997%2Fdeepguard--ai-181717.svg?style=flat&logo=github)](https://github.com/akshatk1997/deepguard-ai)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Akshat%20Kumar-0A66C2.svg?style=flat&logo=linkedin)](https://www.linkedin.com/in/akshatk1997)
 [![Python Version](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15%2B-orange.svg)](https://tensorflow.org/)
 [![Keras](https://img.shields.io/badge/Architecture-XceptionNet-red.svg)](https://keras.io/)
@@ -182,6 +184,19 @@ DEEPGUARD AI ensures transparent predictions:
 
 ---
 
-## 8. License & Disclaimers
+## 8. Author & Developer Contact
+
+**Akshat Kumar**  
+*AI Developer & Product Builder*  
+Bridging B.Tech Computer Science and MBA in AI & Data Science to ship production-grade machine intelligence and computer vision systems.
+
+- 🌐 **GitHub Profile**: [@akshatk1997](https://github.com/akshatk1997)
+- 💼 **LinkedIn Profile**: [linkedin.com/in/akshatk1997](https://www.linkedin.com/in/akshatk1997)
+- ✉️ **Email**: [akshatk1997@gmail.com](mailto:akshatk1997@gmail.com)
+- 📂 **Project Repository**: [github.com/akshatk1997/deepguard-ai](https://github.com/akshatk1997/deepguard-ai)
+
+---
+
+## 9. License & Disclaimers
 
 This software is released under the **MIT License**. Deepfake detection models are probabilistic statistical classifiers; predictions should be evaluated alongside forensic chain-of-custody protocols in legal and critical applications.
